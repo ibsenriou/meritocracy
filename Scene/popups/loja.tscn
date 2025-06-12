@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://be4svjle23mpv"]
+
+[ext_resource type="Script" uid="uid://d0c71yb4ajqoj" path="res://Scene/popups/popup_a.gd" id="1_ag7j8"]
+[ext_resource type="Texture2D" uid="uid://xg488qqmn3ao" path="res://Assets/ui/a8a1b3f4-ebaf-4187-806d-df68a53762c3-removebg-preview.png" id="2_v0y7s"]
+[ext_resource type="Texture2D" uid="uid://5d5u7t7507p7" path="res://Assets/ui/fechar_x.png" id="3_dx54h"]
+
+[node name="Loja" type="PopupPanel"]
+size = Vector2i(1208, 1208)
+visible = true
+script = ExtResource("1_ag7j8")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v0y7s")
+
+[node name="BotaoFechar" type="TextureButton" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1204.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 1204.0
+grow_horizontal = 0
+scale = Vector2(0.0519062, 0.0411884)
+texture_normal = ExtResource("3_dx54h")
+
+[connection signal="pressed" from="BotaoFechar" to="." method="_on_botao_fechar_pressed"]
