@@ -1,1 +1,3 @@
 # meritocracy
+
+Jogo de alfas!
