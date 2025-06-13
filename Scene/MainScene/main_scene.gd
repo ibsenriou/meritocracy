@@ -39,7 +39,7 @@ func atualizar_label_da_ui_de_mes():
 	mes_label.text = "%s ANO %02d" % [mes_inicial, ano_atual]
 
 func atualizar_ui_de_dinheiro():
-	dinheiro_label.text = "R$ " + str("%.2f" % dinheiro)
+	dinheiro_label.text = "R$ " + str("%.2f" % conta_corrente)
 
 func atualizar_ui_do_cabecalho_de_status():
 	atualizar_label_da_ui_de_mes()
@@ -61,7 +61,7 @@ func computar_lucros_e_prejuizos_do_periodo():
 	var saldo_mes = salario_mensal - gastos_fixos
 	var mes_inicial_formatado = "%s ANO %02d" % [nomes_meses[(mes_atual - 1) % 12], ano_atual]
 
-	dinheiro += saldo_mes
+	conta_corrente += saldo_mes
 	
 	atualizar_ui_de_dinheiro()
 
@@ -76,7 +76,7 @@ func computar_o_avanco_do_tempo_para_o_proximo_mes():
 		ano_atual += 1
 		idade += 1
 
-	atualizar_label_mes()
+	atualizar_label_da_ui_de_mes()
 
 	# Se for fazer resumo mais pra frente vemos onde colocar essas funcoes aqui abaixo pra mostrar o resumoUI Por enquanto nao precisa!
 	# var geracao_inicial_popup = RESUMO_MES.instantiate()
@@ -85,8 +85,8 @@ func computar_o_avanco_do_tempo_para_o_proximo_mes():
 
 
 func avancar_para_o_proximo_mes():
-	calcular_lucros_e_prejuizos_do_periodo()
-
+	computar_lucros_e_prejuizos_do_periodo()
+	computar_o_avanco_do_tempo_para_o_proximo_mes()
 
 # Perfeito!! So lembrar que quando formos trocar de fato os botoes pra comecar a incorportar logica neles, precisamos trocar o nome de button a para dar um nome expressivo para o botao
 # exemplo: on_button_loja_pressed, ai nao esquecer de ajeitar isso depois!
@@ -102,4 +102,3 @@ func _on_button_b_pressed():
 # exemplo: _on_botao_de_avancar_para_o_proximo_mes_pressed
 func _on_botao_dinheiro_pressed():
 	avancar_para_o_proximo_mes()
-

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwxqwgsb401up"]
 
-[ext_resource type="Script" uid="uid://cimfyfk4q8b13" path="res://Scene/popups/inventário.gd" id="1_7poei"]
+[ext_resource type="Script" uid="uid://cimfyfk4q8b13" path="res://Scene/popups/inventario.gd" id="1_7poei"]
 [ext_resource type="Texture2D" uid="uid://5d5u7t7507p7" path="res://Assets/ui/fechar_x.png" id="3_f7cih"]
 
 [node name="inventário" type="Control"]
