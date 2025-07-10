@@ -4,40 +4,43 @@
 [ext_resource type="Texture2D" uid="uid://5d5u7t7507p7" path="res://Assets/ui/fechar_x.png" id="2_jbvyf"]
 
 [node name="resumo_mes" type="PopupPanel"]
-position = Vector2i(294, 256)
-size = Vector2i(132, 335)
+size = Vector2i(131, 192)
 visible = true
 script = ExtResource("1_5s6u4")
 
 [node name="FecharBtn" type="Button" parent="."]
-visible = false
 layout_direction = 2
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 128.0
-offset_bottom = 331.0
-scale = Vector2(0.6, 0.32)
+offset_right = 127.0
+offset_bottom = 188.0
+scale = Vector2(0.55069, 0.463555)
 icon = ExtResource("2_jbvyf")
 expand_icon = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 128.0
-offset_bottom = 331.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.545098)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 128.0
-offset_bottom = 331.0
+offset_right = 127.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.4, 3.24)
+size_flags_vertical = 4
+color = Color(0, 0, 0, 0.545098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 127.0
+offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4

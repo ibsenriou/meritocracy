@@ -1,16 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4hho2fi6drri"]
+[gd_scene load_steps=5 format=3 uid="uid://d4hho2fi6drri"]
 
 [ext_resource type="Script" uid="uid://dsh6h41n551jf" path="res://Scene/MainScene/main_scene.gd" id="1_31fxm"]
-[ext_resource type="Texture2D" uid="uid://c1u3pgry6jiqq" path="res://Assets/ui/Icones/WhatsApp_Image_2025-06-11_at_12.38.55-removebg-preview.png" id="2_620cj"]
-[ext_resource type="FontFile" uid="uid://bp0hbx0w360q6" path="res://Assets/ui/Nunito-VariableFont_wght.ttf" id="2_rojno"]
-[ext_resource type="Texture2D" uid="uid://cna36bbweqgl1" path="res://icon.svg" id="3_b5n06"]
+[ext_resource type="Texture2D" uid="uid://dd4a07uolf5yn" path="res://kenney_ui-pack/PNG/Black/2x/gear.png" id="2_rojno"]
+[ext_resource type="Texture2D" uid="uid://gcsjnryls7be" path="res://kenney_ui-pack/PNG/Black/2x/singleplayer.png" id="3_b5n06"]
 
-[sub_resource type="GDScript" id="GDScript_rojno"]
-script/source = "extends TextureButton
-
-func _draw():
-	draw_circle(Vector2(size.x / 2, size.y / 2), 20, Color.DARK_SLATE_BLUE)
-"
+[sub_resource type="Theme" id="Theme_b5n06"]
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
@@ -21,133 +15,127 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_31fxm")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_620cj")
-
-[node name="PopupManager" type="Control" parent="."]
-z_index = 10
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 4.0
-offset_right = 1.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="StyleBoxFlat" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="TopoHUD" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 42.0
 grow_horizontal = 2
-theme_override_constants/separation = 1
 
-[node name="MesLabel" type="Label" parent="HBoxContainer"]
+[node name="MesAnoLabel" type="Label" parent="TopoHUD"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_rojno")
-theme_override_font_sizes/font_size = 31
-text = "Jan Ano 01"
+offset_left = 16.0
+offset_top = 25.0
+offset_right = 100.0
+offset_bottom = 48.0
+scale = Vector2(2.1144, 2)
+text = "Jan/Ano 01 - Idade 18 Anos"
 
-[node name="Spacer" type="Control" parent="HBoxContainer"]
+[node name="DinheiroLabel" type="Label" parent="TopoHUD"]
 layout_mode = 2
-size_flags_horizontal = 6
+offset_left = 489.0
+offset_top = 25.0
+offset_right = 554.0
+offset_bottom = 48.0
+scale = Vector2(2, 2)
+text = "R$ 00,00"
 
-[node name="DinheiroLabel" type="Label" parent="HBoxContainer"]
+[node name="BotaoOpcoes" type="TextureButton" parent="TopoHUD"]
+use_parent_material = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_rojno")
-theme_override_font_sizes/font_size = 31
-text = "R$ 0,00"
+offset_left = 620.0
+offset_top = 2.0
+offset_right = 720.0
+offset_bottom = 102.0
+texture_normal = ExtResource("2_rojno")
 
-[node name="BotaoConfiguracoes" type="TextureButton" parent="HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("3_b5n06")
-
-[node name="BotaoPassarMes" type="TextureButton" parent="."]
-layout_mode = 2
-offset_left = 186.0
-offset_top = 822.0
-offset_right = 542.0
-offset_bottom = 950.0
-
-[node name="Label" type="Label" parent="BotaoPassarMes"]
-layout_mode = 0
-offset_top = 4.0
-offset_right = 355.0
-offset_bottom = 122.0
-theme_override_font_sizes/font_size = 30
-text = "Proximo
- Mês"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BotoesInferiores" type="HBoxContainer" parent="."]
+[node name="BotoesInferiores" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -128.0
-offset_right = 60.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.95052, 1.0132)
 
-[node name="ButtonA" type="TextureButton" parent="BotoesInferiores"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("3_b5n06")
-script = SubResource("GDScript_rojno")
-
-[node name="buttonB" type="TextureButton" parent="BotoesInferiores"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("3_b5n06")
-
-[node name="ButtonC" type="TextureButton" parent="BotoesInferiores"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("3_b5n06")
-
-[node name="ButtonD" type="TextureButton" parent="BotoesInferiores"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("3_b5n06")
-
-[node name="ButtonE" type="TextureButton" parent="BotoesInferiores"]
-modulate = Color(0.364706, 1, 1, 1)
-self_modulate = Color(1, 0, 1, 1)
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("3_b5n06")
-
-[node name="PoupancaLabel" type="Label" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="BotoesInferiores"]
+show_behind_parent = true
+layout_direction = 2
 layout_mode = 0
-offset_left = 36.0
-offset_top = 55.0
-offset_right = 76.0
-offset_bottom = 78.0
-scale = Vector2(1.492, 2.0279)
+offset_left = 70.0
+offset_top = -126.0
+offset_right = 216.0
+offset_bottom = -95.0
+scale = Vector2(4, 4)
+theme_override_constants/separation = 13
 
-[connection signal="pressed" from="BotaoPassarMes" to="." method="_on_botao_dinheiro_pressed"]
-[connection signal="pressed" from="BotoesInferiores/ButtonA" to="." method="_on_button_a_pressed"]
-[connection signal="pressed" from="BotoesInferiores/buttonB" to="." method="_on_button_b_pressed"]
-[connection signal="pressed" from="BotoesInferiores/ButtonC" to="." method="_on_button_c_pressed"]
-[connection signal="pressed" from="BotoesInferiores/ButtonD" to="." method="_on_button_d_pressed"]
-[connection signal="pressed" from="BotoesInferiores/ButtonE" to="." method="_on_button_e_pressed"]
+[node name="BotaoLoja" type="Button" parent="BotoesInferiores/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_b5n06")
+text = "A"
+
+[node name="BotaoInventario" type="Button" parent="BotoesInferiores/HBoxContainer"]
+layout_mode = 2
+text = "B"
+
+[node name="ButtonC" type="Button" parent="BotoesInferiores/HBoxContainer"]
+layout_mode = 2
+text = "C"
+
+[node name="ButtonD" type="Button" parent="BotoesInferiores/HBoxContainer"]
+layout_mode = 2
+text = "D"
+
+[node name="ButtonE" type="Button" parent="BotoesInferiores/HBoxContainer"]
+layout_mode = 2
+text = "E"
+
+[node name="PersonagemArea" type="Control" parent="."]
+show_behind_parent = true
+anchors_preset = 0
+offset_left = 112.0
+offset_top = 221.0
+offset_right = 179.0
+offset_bottom = 289.0
+scale = Vector2(7.60989, 7.61895)
+
+[node name="BotaoPassarMes" type="Button" parent="PersonagemArea"]
+top_level = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.0
+offset_top = -179.0
+offset_right = -71.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.12277, 2.59339)
+icon = ExtResource("3_b5n06")
+flat = true
+
+[node name="TelaAtiva" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 84.0
+offset_right = 3.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.99078, 0.823338)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.393086, 0.393086, 0.393085, 1)

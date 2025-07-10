@@ -1,104 +1,103 @@
 extends Control
 
-# --- POPUPS ---
-# TODO: Remover todas as variaveis e nomes de arquivos contendo acentuacao grafica / nunca usar tio acento agudo circunflexo craze ou variados. usar apenas caracteres ASCII em nomes de variaveis e arquivos A-z (incluindo 0-9)
-@onready var LOJA = preload("res://Scene/popups/loja.tscn")
-@onready var INVENTÁRIO = preload("res://Scene/popups/inventário.tscn")
-@onready var CONFIGURAÇÕES = preload("res://Scene/popups/configurações.tscn")
-@onready var RESUMO_MES = preload("res://Scene/Resumo mes/resumo_mes.tscn")
+# --- CENAS DOS POPUPS ---
+@onready var cena_loja: PackedScene = preload("res://Scene/popups/tela_loja.tscn")
+@onready var cena_inventario: PackedScene = preload("res://Scene/popups/tela_inventario.tscn")
+@onready var cena_opcoes: PackedScene = preload("res://Scene/popups/TelaOpcoes.tscn")
 
-# --- UI ELEMENTOS ---
-@onready var popup_manager = $PopupManager
-@onready var mes_label = $HBoxContainer/MesLabel
-@onready var dinheiro_label = $HBoxContainer/DinheiroLabel
+# --- UI ---
+@onready var mes_ano_label: Label = $TopoHUD/MesAnoLabel  # Label que mostra mês, ano e idade
+@onready var dinheiro_label: Label = $TopoHUD/DinheiroLabel  # Label que mostra o dinheiro
 
+# --- BOTÕES ---
+@onready var botao_inventario: Button = $BotoesInferiores/HBoxContainer/BotaoInventario
+@onready var botao_loja: Button = $BotoesInferiores/HBoxContainer/BotaoLoja
+@onready var botao_opcoes: TextureButton = $TopoHUD/BotaoOpcoes
+@onready var botao_passar_mes: Button = $PersonagemArea/BotaoPassarMes
 
-# --- VARIÁVEIS DO JOGO ---
+# --- POPUPS / TELAS ---
+@onready var tela_ativa: Control = $TelaAtiva  # Nó onde as telas aparecem
+var tela_atual: Node = null  # Referência para a tela popup atual
 
-# --- Status do Personagem ---
-var idade: int = 0
-var conta_corrente: float = 0.0
-
-# --- Status do Gerenciador de Renda
-var salario_mensal: float = 2000.0
-var gastos_fixos: float = 1950.0
-
-# --- Status do Gerenciador de Tempo
+# --- ESTADO DO JOGO ---
 var mes_atual: int = 1
-var ano_atual: int = 79  # começa em 79 para teste
+var ano_atual: int = 79
+var idade: int = 18
+var dinheiro: float = 0.0
 
-# --- Variavel Auxiliar para Gerenciamento de Tempo
-var nomes_meses = ["JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"]
-
+# Lista com os nomes dos meses para mostrar abreviado
+var nomes_meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
 
 func _ready():
-	iniciar_jogo()
+	# Conecta sinais dos botões para funções específicas
+	botao_loja.pressed.connect(_on_botao_loja_pressed)
+	botao_inventario.pressed.connect(_on_botao_inventario_pressed)
+	botao_opcoes.pressed.connect(_on_botao_opcoes_pressed)
+	botao_passar_mes.pressed.connect(_on_botao_passar_mes_pressed)
 
-func atualizar_label_da_ui_de_mes():
-	var mes_inicial = nomes_meses[(mes_atual - 1) % 12]
-	mes_label.text = "%s ANO %02d" % [mes_inicial, ano_atual]
+	# Atualiza os labels da HUD com os valores iniciais
+	atualizar_status()
 
-func atualizar_ui_de_dinheiro():
-	dinheiro_label.text = "R$ " + str("%.2f" % conta_corrente)
+# Função para abrir uma tela popup
+func abrir_tela(cena: PackedScene):
+	# Se já tem uma tela aberta
+	if tela_atual and tela_atual.is_inside_tree():
+		# Se for a mesma tela, fecha ela e mostra botão passar mês
+		if tela_atual.scene_file_path == cena.resource_path:
+			tela_atual.queue_free()
+			tela_atual = null
+			botao_passar_mes.show()
+			return
+		else:
+			# Se for outra tela, fecha a atual
+			tela_atual.queue_free()
+			tela_atual = null
 
-func atualizar_ui_do_cabecalho_de_status():
-	atualizar_label_da_ui_de_mes()
-	atualizar_ui_de_dinheiro()
+	# Esconde o botão passar mês enquanto popup estiver ativo
+	botao_passar_mes.hide()
 
-func iniciar_jogo():
-	atualizar_ui_do_cabecalho_de_status()
+	# Instancia e adiciona a nova tela popup na cena
+	tela_atual = cena.instantiate()
+	tela_ativa.add_child(tela_atual)
 
+	# Centraliza o popup na área disponível
+	await get_tree().process_frame
+	var area = tela_ativa.get_size()
+	tela_atual.position = area / 2 - tela_atual.size / 2
 
-func reiniciar_com_nova_geracao():
-	mes_atual = 1
-	ano_atual = 18
-	idade = 18
-	
-	iniciar_jogo()
+# Funções chamadas quando cada botão é pressionado:
+func _on_botao_loja_pressed():
+	abrir_tela(cena_loja)
 
-func computar_lucros_e_prejuizos_do_periodo():
-	# Nessa funcao ficara toda a logica de calcular e atualizar a UI de dinheiro
-	var saldo_mes = salario_mensal - gastos_fixos
-	var mes_inicial_formatado = "%s ANO %02d" % [nomes_meses[(mes_atual - 1) % 12], ano_atual]
+func _on_botao_inventario_pressed():
+	abrir_tela(cena_inventario)
 
-	conta_corrente += saldo_mes
-	
-	atualizar_ui_de_dinheiro()
+func _on_botao_opcoes_pressed():
+	abrir_tela(cena_opcoes)
 
-func computar_o_avanco_do_tempo_para_o_proximo_mes():
-	# Nessa funcao ficara toda a logica de avancar o periodo de tempo
+# Função para avançar o mês e calcular dinheiro
+func _on_botao_passar_mes_pressed():
+	dinheiro += 100  # Exemplo fixo de dinheiro ganho
+
 	mes_atual += 1
-	if mes_atual > 12 && ano_atual == 80:
-		reiniciar_com_nova_geracao()
-		
-	elif mes_atual > 12:
+
+	if mes_atual > 12:
 		mes_atual = 1
 		ano_atual += 1
 		idade += 1
 
-	atualizar_label_da_ui_de_mes()
+		# Quando a idade chegar a 80, reinicia para nova geração
+		if idade >= 80:
+			print("🔁 Nova geração iniciada!")
+			idade = 18
+			ano_atual = 1
+			mes_atual = 1
 
-	# Se for fazer resumo mais pra frente vemos onde colocar essas funcoes aqui abaixo pra mostrar o resumoUI Por enquanto nao precisa!
-	# var geracao_inicial_popup = RESUMO_MES.instantiate()
-	# geracao_inicial_popup.setup(salario_mensal, gastos_fixos, saldo_mes, mes_inicial_formatado)
-	# popup_manager.add_child(geracao_inicial_popup)
+	# Atualiza a HUD para refletir as mudanças
+	atualizar_status()
 
-
-func avancar_para_o_proximo_mes():
-	computar_lucros_e_prejuizos_do_periodo()
-	computar_o_avanco_do_tempo_para_o_proximo_mes()
-
-# Perfeito!! So lembrar que quando formos trocar de fato os botoes pra comecar a incorportar logica neles, precisamos trocar o nome de button a para dar um nome expressivo para o botao
-# exemplo: on_button_loja_pressed, ai nao esquecer de ajeitar isso depois!
-func _on_button_a_pressed():
-	var popup = LOJA.instantiate()
-	popup_manager.add_child(popup)
-
-func _on_button_b_pressed():
-	var popup = INVENTÁRIO.instantiate()
-	popup_manager.add_child(popup)
-
-# Igual esta aqui, mas nao vamos chamar esse botao de dinheiro. Apensar de ser um icone de dinheiro ele precisar se chamar algo mais declarativo do que ele faz:
-# exemplo: _on_botao_de_avancar_para_o_proximo_mes_pressed
-func _on_botao_dinheiro_pressed():
-	avancar_para_o_proximo_mes()
+# Atualiza os textos na HUD
+func atualizar_status():
+	var mes_texto = nomes_meses[(mes_atual - 1) % 12]  # Ajusta índice para lista zero-based
+	mes_ano_label.text = "%s/Ano %02d - Idade %d anos" % [mes_texto, ano_atual, idade]
+	dinheiro_label.text = "R$ %.2f" % dinheiro

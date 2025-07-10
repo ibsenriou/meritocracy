@@ -1,0 +1,192 @@
+[gd_scene load_steps=20 format=3 uid="uid://73bgg2se3w76"]
+
+[ext_resource type="StyleBox" uid="uid://b13onrrisw42f" path="res://Resources/BUttonFocus.tres" id="1_dhiag"]
+[ext_resource type="StyleBox" uid="uid://cy2k60ksjdgsr" path="res://Resources/PanelStyleBox.tres" id="1_rrvj3"]
+[ext_resource type="FontFile" uid="uid://obugj8o3ky80" path="res://kenney_ui-pack/Font/Kenney Future Narrow.ttf" id="1_vowkf"]
+[ext_resource type="Texture2D" uid="uid://kuwgv06boe3g" path="res://kenney_ui-pack/PNG/Grey/Double/button_rectangle_flat.png" id="1_ywkfp"]
+[ext_resource type="StyleBox" uid="uid://c3d72bp2qa0he" path="res://Resources/ButtonHovered.tres" id="2_c5v3v"]
+[ext_resource type="StyleBox" uid="uid://dxofujjmpnmy3" path="res://Resources/StyleBoxDeph.tres" id="3_ni5a8"]
+[ext_resource type="StyleBox" uid="uid://dbj1qsqqn670u" path="res://Resources/ButtonSelected.tres" id="4_pcjov"]
+[ext_resource type="Texture2D" uid="uid://culillmwygoak" path="res://kenney_ui-pack/PNG/Grey/Double/icon_checkmark.png" id="5_00gbr"]
+[ext_resource type="Texture2D" uid="uid://cjrfd1gwwugkg" path="res://kenney_ui-pack/PNG/Grey/Double/button_square_depth_line.png" id="6_sc21r"]
+[ext_resource type="Texture2D" uid="uid://buxwiqbqleiwf" path="res://kenney_ui-pack/PNG/Grey/Double/icon_cross.png" id="6_w6use"]
+[ext_resource type="StyleBox" uid="uid://b5x21cu7ldq3s" path="res://Resources/OptionButtonNormal.tres" id="7_55iq3"]
+[ext_resource type="Texture2D" uid="uid://cyyvdlma2o8ss" path="res://kenney_ui-pack/PNG/Blue/Double/slide_hangle.png" id="7_e0k3i"]
+[ext_resource type="Script" uid="uid://yo5dmdgx7p75" path="res://Scene/popups/tela_opcoes.gd" id="12_w6use"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1c7v"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sjfya"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+texture = ExtResource("1_ywkfp")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_00gbr"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+texture = ExtResource("6_sc21r")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ni5a8"]
+
+[sub_resource type="Theme" id="Theme_ramos"]
+Button/colors/font_color = Color(0.270222, 0.270222, 0.270222, 1)
+Button/styles/focus = ExtResource("1_dhiag")
+Button/styles/hover = ExtResource("2_c5v3v")
+Button/styles/normal = ExtResource("3_ni5a8")
+Button/styles/pressed = ExtResource("4_pcjov")
+CheckBox/icons/checked = ExtResource("5_00gbr")
+CheckBox/icons/unchecked = ExtResource("6_w6use")
+GridContainer/constants/h_separation = 16
+GridContainer/constants/v_separation = 16
+HSlider/icons/grabber = ExtResource("7_e0k3i")
+HSlider/icons/grabber_highlight = ExtResource("7_e0k3i")
+HSlider/styles/slider = SubResource("StyleBoxFlat_i1c7v")
+Label/colors/font_color = Color(0.0846899, 0.0846899, 0.0846899, 1)
+OptionButton/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/styles/focus = SubResource("StyleBoxTexture_sjfya")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_00gbr")
+OptionButton/styles/normal = ExtResource("7_55iq3")
+OptionButton/styles/pressed = null
+PanelContainer/styles/panel = ExtResource("1_rrvj3")
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_ni5a8")
+TabContainer/styles/tab_focus = ExtResource("1_dhiag")
+TabContainer/styles/tab_hovered = ExtResource("2_c5v3v")
+TabContainer/styles/tab_selected = ExtResource("4_pcjov")
+TabContainer/styles/tab_unselected = ExtResource("2_c5v3v")
+
+[sub_resource type="Theme" id="Theme_dhiag"]
+default_font = ExtResource("1_vowkf")
+
+[node name="TelaOpcoes" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_ramos")
+script = ExtResource("12_w6use")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_dhiag")
+current_tab = 0
+
+[node name="Graficos" type="PanelContainer" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/TabContainer/Graficos"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Graficos/GridContainer"]
+layout_mode = 2
+text = "NOme:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/Graficos/GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/TabContainer/Graficos/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Opção Gráfica"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/TabContainer/Graficos/GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+item_count = 3
+popup/item_0/text = " 1280*720"
+popup/item_0/id = 0
+popup/item_1/text = "1920*1024"
+popup/item_1/id = 1
+popup/item_2/text = "720*640"
+popup/item_2/id = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/TabContainer/Graficos/GridContainer"]
+layout_mode = 2
+text = "Vsync"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/Graficos/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Audio" type="PanelContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/TabContainer/Audio"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+text = "Volume Principal"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/TabContainer/Audio/GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+text = "Volume dos efeitos sonoros"
+
+[node name="HSlider2" type="HSlider" parent="VBoxContainer/TabContainer/Audio/GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+text = "Volume da música"
+
+[node name="HSlider3" type="HSlider" parent="VBoxContainer/TabContainer/Audio/GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BotaoFechar" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sair"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Resetar"
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Aplicar"
