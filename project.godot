@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Vida de CLT 2"
+config/name="Meritocracia"
 run/main_scene="uid://d4hho2fi6drri"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Utils="*res://Scene/MainScene/utils.gd"
 
 [display]
 
@@ -21,6 +25,11 @@ window/size/viewport_width=720
 window/size/viewport_height=960
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
 
 [rendering]
 
