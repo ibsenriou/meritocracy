@@ -4,6 +4,9 @@ extends Control
 @onready var cena_loja: PackedScene = preload("res://Scene/popups/tela_loja.tscn")
 @onready var cena_inventario: PackedScene = preload("res://Scene/popups/tela_inventario.tscn")
 @onready var cena_opcoes: PackedScene = preload("res://Scene/popups/TelaOpcoes.tscn")
+@onready var cena_c: PackedScene = preload("res://Scene/popups/tela_c.tscn")
+@onready var cena_d: PackedScene = preload("res://Scene/popups/tela_d.tscn")
+@onready var cena_e: PackedScene = preload("res://Scene/popups/tela_e.tscn")
 
 # --- UI ---
 @onready var mes_ano_label: Label = $TopoHUD/MesAnoLabel  # Label que mostra mês, ano e idade
@@ -14,6 +17,10 @@ extends Control
 @onready var botao_loja: Button = $BotoesInferiores/HBoxContainer/BotaoLoja
 @onready var botao_opcoes: TextureButton = $TopoHUD/BotaoOpcoes
 @onready var botao_passar_mes: Button = $PersonagemArea/BotaoPassarMes
+@onready var botao_c: Button = $BotoesInferiores/HBoxContainer/BotaoC
+@onready var botao_d: Button = $BotoesInferiores/HBoxContainer/BotaoD
+@onready var botao_e: Button = $BotoesInferiores/HBoxContainer/BotaoE
+
 
 # --- POPUPS / TELAS ---
 @onready var tela_ativa: Control = $TelaAtiva  # Nó onde as telas aparecem
@@ -38,6 +45,15 @@ func _on_botao_inventario_pressed():
 
 func _on_botao_opcoes_pressed():
 	_abrir_cena_como_popup(cena_opcoes)
+	
+func _on_botao_C_pressed():
+	_abrir_cena_como_popup(cena_c)
+	
+func _on_botao_D_pressed():
+	_abrir_cena_como_popup(cena_d)
+	
+func _on_botao_e_pressed():
+	_abrir_cena_como_popup(cena_e)	
 
 # Função para avançar o mês e calcular dinheiro
 func _on_botao_passar_mes_pressed():
@@ -76,6 +92,7 @@ func _abrir_cena_como_popup(cena: PackedScene) -> void:
 	await get_tree().process_frame
 	var area = tela_ativa.get_size()
 	tela_atual.position = area / 2 - tela_atual.size / 2
+
 
 # Realiza o calculo de avanco de periodo e atualiza o HUD	
 func _calcular_avanco_de_periodo(get_lucros_e_prejuizos: Callable) -> void:
@@ -122,6 +139,9 @@ func _iniciar_jogo() -> void:
 	botao_inventario.pressed.connect(_on_botao_inventario_pressed)
 	botao_opcoes.pressed.connect(_on_botao_opcoes_pressed)
 	botao_passar_mes.pressed.connect(_on_botao_passar_mes_pressed)
+	botao_c.pressed.connect(_on_botao_C_pressed)
+	botao_d.pressed.connect(_on_botao_D_pressed)
+	botao_e.pressed.connect(_on_botao_e_pressed)
 
 	# Atualiza os labels da HUD com os valores iniciais
 	_atualizar_cabecalho_de_status()

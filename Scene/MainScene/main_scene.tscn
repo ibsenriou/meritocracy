@@ -77,15 +77,15 @@ text = "A"
 layout_mode = 2
 text = "B"
 
-[node name="ButtonC" type="Button" parent="BotoesInferiores/HBoxContainer"]
+[node name="BotaoC" type="Button" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
 text = "C"
 
-[node name="ButtonD" type="Button" parent="BotoesInferiores/HBoxContainer"]
+[node name="BotaoD" type="Button" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
 text = "D"
 
-[node name="ButtonE" type="Button" parent="BotoesInferiores/HBoxContainer"]
+[node name="BotaoE" type="Button" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
 text = "E"
 
@@ -121,13 +121,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 84.0
-offset_right = 3.0
-offset_bottom = 84.0
+offset_left = 7.0
+offset_top = 91.0
+offset_right = 7.0
+offset_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.99078, 0.823338)
+scale = Vector2(0.991089, 0.766876)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 show_behind_parent = true
