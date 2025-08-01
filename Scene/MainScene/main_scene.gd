@@ -10,16 +10,16 @@ extends Control
 
 # --- UI ---
 @onready var mes_ano_label: Label = $TopoHUD/MesAnoLabel  # Label que mostra mês, ano e idade
-@onready var dinheiro_label: Label = $TopoHUD/DinheiroLabel  # Label que mostra o dinheiro
+@onready var conta_corrente_label: Label = $TopoHUD/ContaCorrenteLabel# Label que mostra a conta corrente
 
 # --- BOTÕES ---
-@onready var botao_inventario: Button = $BotoesInferiores/HBoxContainer/BotaoInventario
-@onready var botao_loja: Button = $BotoesInferiores/HBoxContainer/BotaoLoja
+@onready var botao_inventario: TextureButton = $BotoesInferiores/HBoxContainer/BotaoInventario
+@onready var botao_loja: TextureButton = $BotoesInferiores/HBoxContainer/BotaoLoja
 @onready var botao_opcoes: TextureButton = $TopoHUD/BotaoOpcoes
-@onready var botao_passar_mes: Button = $PersonagemArea/BotaoPassarMes
-@onready var botao_c: Button = $BotoesInferiores/HBoxContainer/BotaoC
-@onready var botao_d: Button = $BotoesInferiores/HBoxContainer/BotaoD
-@onready var botao_e: Button = $BotoesInferiores/HBoxContainer/BotaoE
+@onready var botao_passar_mes: TextureButton = $BotaoPassarMes
+@onready var botao_d: TextureButton = $BotoesInferiores/HBoxContainer/BotaoD
+@onready var botao_e: TextureButton = $BotoesInferiores/HBoxContainer/BotaoE
+@onready var botao_status: TextureButton = $BotoesInferiores/HBoxContainer/BotaoStatus
 
 
 # --- POPUPS / TELAS ---
@@ -30,7 +30,7 @@ var tela_atual: Node = null  # Referência para a tela popup atual
 var mes_atual: int = 1
 var ano_atual: int = 79
 var idade: int = 79
-var dinheiro: float = 0.0
+var conta_corrente: float = 0.0
 
 func _ready():
 	# Chama a funcao para iniciar o jogo com a lógica centralizada nela
@@ -38,6 +38,7 @@ func _ready():
 	
 # Funções chamadas quando cada botão é pressionado:
 func _on_botao_loja_pressed():
+	print("Botão funcionando!")
 	_abrir_cena_como_popup(cena_loja)
 
 func _on_botao_inventario_pressed():
@@ -46,7 +47,7 @@ func _on_botao_inventario_pressed():
 func _on_botao_opcoes_pressed():
 	_abrir_cena_como_popup(cena_opcoes)
 	
-func _on_botao_C_pressed():
+func _on_botao_status_pressed():
 	_abrir_cena_como_popup(cena_c)
 	
 func _on_botao_D_pressed():
@@ -101,7 +102,7 @@ func _calcular_avanco_de_periodo(get_lucros_e_prejuizos: Callable) -> void:
 	# Chama a funcao para saber quanto foi o resultado do periodo
 	var res: int = get_lucros_e_prejuizos.call()
 	# Adiciona o resultado do calculo processado na verba do trabalhador
-	dinheiro += res
+	conta_corrente += res
 
 	# Se mes atual for 12, retornar para 1, senao, incrementar mes
 	# isso remove a complexidade do %12 do acesso ao array de meses
@@ -130,7 +131,7 @@ func _atualizar_cabecalho_de_status():
 	var mes_texto = Utils.NOMES_MESES_3_CHARS[(mes_atual - 1)]
 	# TODO Bruno - se for adicionar idade, criar uma label propria para essa ubfirnacai
 	mes_ano_label.text = "%s/Ano %02d - Idade %d anos" % [mes_texto, ano_atual, idade]
-	dinheiro_label.text = "R$ %.2f" % dinheiro
+	conta_corrente_label.text = "R$ %.2f" % conta_corrente
 
 # Inicializa o estado do jogo ao começar a cena.
 func _iniciar_jogo() -> void:
@@ -139,7 +140,7 @@ func _iniciar_jogo() -> void:
 	botao_inventario.pressed.connect(_on_botao_inventario_pressed)
 	botao_opcoes.pressed.connect(_on_botao_opcoes_pressed)
 	botao_passar_mes.pressed.connect(_on_botao_passar_mes_pressed)
-	botao_c.pressed.connect(_on_botao_C_pressed)
+	botao_status.pressed.connect(_on_botao_status_pressed)
 	botao_d.pressed.connect(_on_botao_D_pressed)
 	botao_e.pressed.connect(_on_botao_e_pressed)
 

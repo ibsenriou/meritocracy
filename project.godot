@@ -21,10 +21,9 @@ Utils="*res://Scene/MainScene/utils.gd"
 
 [display]
 
-window/size/viewport_width=720
-window/size/viewport_height=960
+window/size/viewport_width=540
+window/size/viewport_height=680
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [editor]
 
