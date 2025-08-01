@@ -1,6 +1,8 @@
-[gd_scene format=3 uid="uid://ckpwvs0jjq754"]
+[gd_scene load_steps=2 format=3 uid="uid://ckpwvs0jjq754"]
 
-[node name="TelaInventario" type="Control"]
+[ext_resource type="PackedScene" uid="uid://o6t7ejofeghf" path="res://Scene/popups/fechar_button.tscn" id="1_eqetq"]
+
+[node name="TelaInventario" type="Control" groups=["fechavel"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,3 +32,15 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "TELA INVENTÀRIO"
+
+[node name="FecharButton" parent="." instance=ExtResource("1_eqetq")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = 7.0
+offset_top = -2.0
+offset_right = 7.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 1

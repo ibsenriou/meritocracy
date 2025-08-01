@@ -1,10 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4hho2fi6drri"]
+[gd_scene load_steps=20 format=3 uid="uid://d4hho2fi6drri"]
 
 [ext_resource type="Script" uid="uid://dsh6h41n551jf" path="res://Scene/MainScene/main_scene.gd" id="1_31fxm"]
-[ext_resource type="Texture2D" uid="uid://dd4a07uolf5yn" path="res://kenney_ui-pack/PNG/Black/2x/gear.png" id="2_rojno"]
-[ext_resource type="Texture2D" uid="uid://gcsjnryls7be" path="res://kenney_ui-pack/PNG/Black/2x/singleplayer.png" id="3_b5n06"]
+[ext_resource type="Texture2D" uid="uid://qsnbdkb3gqrg" path="res://Assets/BackGround/ChatGPT Image 31 de jul. de 2025, 15_23_08.png" id="2_x3hsr"]
+[ext_resource type="Texture2D" uid="uid://d2p4mj2e70qke" path="res://Assets/ui/Icones/download-removebg-preview.png" id="3_31qhy"]
+[ext_resource type="Texture2D" uid="uid://w5o1s1q2vx5q" path="res://Assets/ui/Icones/IconedaLojaNormal-removebg-preview.png" id="3_ar6hh"]
+[ext_resource type="FontFile" uid="uid://s7s3defn6mn4" path="res://Fonts/Julygo.ttf" id="3_bmf3h"]
+[ext_resource type="Texture2D" uid="uid://c0bt4ol8tbu3w" path="res://Assets/ui/Icones/download__1_-removebg-preview (1).png" id="4_dsbkn"]
+[ext_resource type="Texture2D" uid="uid://c2ookhao16v4m" path="res://Assets/ui/Icones/IconedaLojaPressed-removebg-preview.png" id="4_majfj"]
+[ext_resource type="Texture2D" uid="uid://bee6655map557" path="res://Assets/ui/Icones/IconeinventárioNormal-removebg-preview.png" id="5_j1v2h"]
+[ext_resource type="Texture2D" uid="uid://b7q2edrcjdsh" path="res://Assets/ui/Icones/IconeMarteloNormal-removebg-preview.png" id="5_majfj"]
+[ext_resource type="Texture2D" uid="uid://3x70iw7nacqw" path="res://Assets/ui/Icones/IconeMarteloPressed-removebg-preview.png" id="6_j1v2h"]
+[ext_resource type="Texture2D" uid="uid://c106rkrm3qo77" path="res://Assets/ui/Icones/IconeInventarioPressed-removebg-preview.png" id="6_xjgpl"]
+[ext_resource type="Texture2D" uid="uid://ba3agxymihhl8" path="res://Assets/ui/Icones/IconeStatusNormal-removebg-preview.png" id="7_8fs6c"]
+[ext_resource type="Texture2D" uid="uid://b73i4urx8qs4o" path="res://Assets/ui/Icones/IconeStatusPressed-removebg-preview.png" id="8_5x104"]
+[ext_resource type="Texture2D" uid="uid://ccl5ciu07phr3" path="res://Assets/ui/Icones/download__2_-removebg-preview.png" id="11_itruq"]
+[ext_resource type="Texture2D" uid="uid://culjeefet1ytp" path="res://Assets/ui/Icones/download__3_-removebg-preview.png" id="12_pvi33"]
+[ext_resource type="Texture2D" uid="uid://b1lw0noky0n6j" path="res://Assets/ui/Icones/botao qualquer.png" id="13_bmf3h"]
+[ext_resource type="Texture2D" uid="uid://p601ce2b5r5c" path="res://Assets/ui/Icones/download__1_-removebg-preview.png" id="14_f07r3"]
+[ext_resource type="AudioStream" uid="uid://djygprsm3ecq1" path="res://Sons/SomdoJOgo-.ogg" id="17_pvi33"]
 
-[sub_resource type="Theme" id="Theme_b5n06"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmf3h"]
+draw_center = false
+shadow_color = Color(0, 1, 0, 1)
+shadow_size = 12
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
@@ -15,38 +33,70 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_31fxm")
 
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("2_x3hsr")
+expand_mode = 1
+
+[node name="TituloJogo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 129.0
+offset_right = 466.0
+offset_bottom = 202.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bmf3h")
+theme_override_font_sizes/font_size = 54
+theme_override_styles/normal = SubResource("StyleBoxFlat_bmf3h")
+text = "Meritocracy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TopoHUD" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_bottom = 100.0
 grow_horizontal = 2
+scale = Vector2(0.98227, 0.993433)
 
 [node name="MesAnoLabel" type="Label" parent="TopoHUD"]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-offset_left = 16.0
-offset_top = 25.0
-offset_right = 100.0
-offset_bottom = 48.0
-scale = Vector2(2.1144, 2)
-text = "Jan/Ano 01 - Idade 18 Anos"
+offset_left = 13.2346
+offset_top = 21.1388
+offset_right = 101.235
+offset_bottom = 44.1388
+scale = Vector2(1.44898, 1.78571)
+text = "Jan/Ano 01 "
 
-[node name="DinheiroLabel" type="Label" parent="TopoHUD"]
+[node name="ContaCorrenteLabel" type="Label" parent="TopoHUD"]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-offset_left = 489.0
-offset_top = 25.0
-offset_right = 554.0
-offset_bottom = 48.0
-scale = Vector2(2, 2)
+offset_left = 330.866
+offset_top = 25.1653
+offset_right = 395.866
+offset_bottom = 48.1653
+scale = Vector2(1.51852, 1.5)
+size_flags_horizontal = 4
 text = "R$ 00,00"
 
 [node name="BotaoOpcoes" type="TextureButton" parent="TopoHUD"]
 use_parent_material = true
 layout_mode = 2
-offset_left = 620.0
-offset_top = 2.0
-offset_right = 720.0
-offset_bottom = 102.0
-texture_normal = ExtResource("2_rojno")
+offset_left = 442.852
+offset_top = -1.00661
+offset_right = 542.852
+offset_bottom = 98.9934
+size_flags_horizontal = 8
+texture_normal = ExtResource("3_31qhy")
+texture_pressed = ExtResource("4_dsbkn")
 
 [node name="BotoesInferiores" type="Control" parent="."]
 layout_mode = 1
@@ -59,46 +109,47 @@ grow_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BotoesInferiores"]
 show_behind_parent = true
-layout_direction = 2
-layout_mode = 0
-offset_left = 70.0
-offset_top = -126.0
-offset_right = 216.0
-offset_bottom = -95.0
-scale = Vector2(4, 4)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -81.0
+offset_right = 2.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.994357, 0.801679)
+mouse_filter = 0
 theme_override_constants/separation = 13
 
-[node name="BotaoLoja" type="Button" parent="BotoesInferiores/HBoxContainer"]
+[node name="BotaoLoja" type="TextureButton" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_b5n06")
-text = "A"
+texture_normal = ExtResource("3_ar6hh")
+texture_pressed = ExtResource("4_majfj")
 
-[node name="BotaoInventario" type="Button" parent="BotoesInferiores/HBoxContainer"]
+[node name="BotaoInventario" type="TextureButton" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
-text = "B"
+texture_normal = ExtResource("5_j1v2h")
+texture_pressed = ExtResource("6_xjgpl")
 
-[node name="BotaoC" type="Button" parent="BotoesInferiores/HBoxContainer"]
+[node name="BotaoStatus" type="TextureButton" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
-text = "C"
+texture_normal = ExtResource("7_8fs6c")
+texture_pressed = ExtResource("8_5x104")
 
-[node name="BotaoD" type="Button" parent="BotoesInferiores/HBoxContainer"]
+[node name="BotaoD" type="TextureButton" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
-text = "D"
+texture_normal = ExtResource("11_itruq")
+texture_pressed = ExtResource("12_pvi33")
 
-[node name="BotaoE" type="Button" parent="BotoesInferiores/HBoxContainer"]
+[node name="BotaoE" type="TextureButton" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
-text = "E"
+texture_normal = ExtResource("13_bmf3h")
+texture_pressed = ExtResource("14_f07r3")
 
-[node name="PersonagemArea" type="Control" parent="."]
-show_behind_parent = true
-anchors_preset = 0
-offset_left = 112.0
-offset_top = 221.0
-offset_right = 179.0
-offset_bottom = 289.0
-scale = Vector2(7.60989, 7.61895)
-
-[node name="BotaoPassarMes" type="Button" parent="PersonagemArea"]
+[node name="BotaoPassarMes" type="TextureButton" parent="."]
 top_level = true
 layout_mode = 1
 anchors_preset = 8
@@ -106,36 +157,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -171.0
-offset_top = -179.0
-offset_right = -71.0
-offset_bottom = -79.0
+offset_left = -77.0
+offset_top = -75.0
+offset_right = 23.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3.12277, 2.59339)
-icon = ExtResource("3_b5n06")
-flat = true
+scale = Vector2(1.1996, 1.28754)
+texture_normal = ExtResource("5_majfj")
+texture_pressed = ExtResource("6_j1v2h")
 
 [node name="TelaAtiva" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 91.0
-offset_right = 7.0
-offset_bottom = 91.0
+offset_top = 85.0
+offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.991089, 0.766876)
+scale = Vector2(1.00312, 0.715242)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.393086, 0.393086, 0.393085, 1)
+[node name="MusicaFundo" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1, 0)
+stream = ExtResource("17_pvi33")
+autoplay = true
