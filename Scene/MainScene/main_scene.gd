@@ -69,9 +69,25 @@ func show_lore(lore_id: String):
 	if modal.has_method("get_lore_data"):
 		var lore = modal.get_lore_data(lore_id)
 		if lore:
-			modal.setup(lore["phrases"])
+			# substitui 'setup' por 'open_modal', passando a música principal do jogo
+			modal.open_modal($MusicaFundo, lore["phrases"])
+			#bloqueia inputs da mainScene enqto ta aberto o modal da lore
+			_set_input_blocked(true)
+			
 	else:
 		push_error("LoreModal.gd precisa ter a função `get_lore_data(lore_id: String)` implementada!")
+
+# --- BLOQUEIO DE INPUT QUANDO O MODAL ESTÁ ABERTO ---
+func _set_input_blocked(block: bool):
+	botao_passar_mes.disabled = block
+	botao_loja.disabled = block
+	botao_inventario.disabled = block
+	botao_opcoes.disabled = block
+	botao_status.disabled = block
+	botao_d.disabled = block
+	botao_e.disabled = block
+	botao_ver_lore.disabled = block
+
 
 # --- POPUPS ---
 func _abrir_cena_como_popup(cena: PackedScene) -> void:

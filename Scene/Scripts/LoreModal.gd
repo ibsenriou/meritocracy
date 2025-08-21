@@ -1,15 +1,19 @@
 extends Control
 
+# --- NODES ---
 @onready var panel = $ModalContainer
 @onready var click_shield: ColorRect = $ModalContainer/ClickShield
 @onready var background_blur: ColorRect = $BackgroundBlur
-@onready var content_container = $ModalContainer/ContentContainer
+@onready var content_container: RichTextLabel = $ModalContainer/ContentContainer
 @onready var rodape = $ModalContainer/Rodape
-@onready var audio_player = $AudioStreamPlayer
+@onready var music_player = $AudioStreamPlayer
 
+# --- VARIÁVEIS ---
 var phrases: Array = []
 var current_index: int = 0
+var main_music_player = null
 
+# --- READY ---
 func _ready() -> void:
 	visible = false
 	
@@ -22,10 +26,62 @@ func _ready() -> void:
 	# Permite clicar no shield para avançar a frase
 	click_shield.gui_input.connect(_on_click_shield_input)
 
-# --- EXIGIDO pelo MainScene ---
+
+# --- ABRIR MODAL COM MÚSICA ---
+func open_modal(main_player, new_phrases: Array) -> void:
+	main_music_player = main_player
+	
+	# Pausar música principal
+	if main_music_player:
+		main_music_player.stop()
+	
+	# Configurar frases
+	phrases = new_phrases
+	current_index = 0
+	
+	# Mostrar modal
+	visible = true
+	
+	# Tocar música do lore
+	music_player.play()
+	
+	# Exibir primeira frase
+	next_phrase()
+
+
+# --- FECHAR MODAL ---
+func close_modal() -> void:
+	# Parar música do lore
+	music_player.stop()
+	visible = false
+	
+	# Retomar música principal
+	if main_music_player:
+		main_music_player.play()
+
+	# Liberar inputs da MainScene
+	if get_parent().has_method("_set_input_blocked"):
+		get_parent()._set_input_blocked(false)
+	
+	
+# --- AVANÇAR FRASES ---
+func next_phrase() -> void:
+	if current_index < phrases.size():
+		content_container.text = phrases[current_index]
+		current_index += 1
+	else:
+		close_modal()
+
+
+# --- INPUT DO CLICK SHIELD ---
+func _on_click_shield_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		get_viewport().set_input_as_handled() # bloqueia clique para trás
+		next_phrase()
+
+
+# --- DADOS DE LORE (EXEMPLO) ---
 func get_lore_data(lore_id: String) -> Dictionary:
-	# Aqui você pode configurar os textos de acordo com o ID
-	# Exemplo simples (substitua pelos seus diálogos reais):
 	var lores = {
 		"intro": {
 			"phrases": [
@@ -43,32 +99,6 @@ func get_lore_data(lore_id: String) -> Dictionary:
 		}
 	}
 	
-	# Retorna o lore correspondente, ou null se não existir
 	if lores.has(lore_id):
 		return lores[lore_id]
 	return {}
-
-# --- SETUP DO MODAL ---
-func setup(new_phrases: Array) -> void:
-	show_modal(new_phrases)
-
-func show_modal(new_phrases: Array) -> void:
-	phrases = new_phrases
-	current_index = 0
-	visible = true
-	next_phrase()
-
-func next_phrase() -> void:
-	if current_index < phrases.size():
-		content_container.text = phrases[current_index]
-		current_index += 1
-	else:
-		hide_modal()
-
-func hide_modal() -> void:
-	visible = false
-
-func _on_click_shield_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		get_viewport().set_input_as_handled() # bloqueia o clique de passar para trás
-		next_phrase()
