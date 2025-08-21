@@ -96,6 +96,9 @@ size_flags_vertical = 4
 theme = SubResource("Theme_ramos")
 script = SubResource("GDScript_w6use")
 
+[node name="FecharButton" parent="." instance=ExtResource("14_e0k3i")]
+layout_mode = 2
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
@@ -188,6 +191,3 @@ text = "Resetar"
 [node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Aplicar"
-
-[node name="FecharButton" parent="." instance=ExtResource("14_e0k3i")]
-layout_mode = 2

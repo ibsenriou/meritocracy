@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d4hho2fi6drri"]
+[gd_scene load_steps=21 format=3 uid="uid://d4hho2fi6drri"]
 
 [ext_resource type="Script" uid="uid://dsh6h41n551jf" path="res://Scene/MainScene/main_scene.gd" id="1_31fxm"]
 [ext_resource type="Texture2D" uid="uid://qsnbdkb3gqrg" path="res://Assets/BackGround/ChatGPT Image 31 de jul. de 2025, 15_23_08.png" id="2_x3hsr"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b1lw0noky0n6j" path="res://Assets/ui/Icones/botao qualquer.png" id="13_bmf3h"]
 [ext_resource type="Texture2D" uid="uid://p601ce2b5r5c" path="res://Assets/ui/Icones/download__1_-removebg-preview.png" id="14_f07r3"]
 [ext_resource type="AudioStream" uid="uid://djygprsm3ecq1" path="res://Sons/SomdoJOgo-.ogg" id="17_pvi33"]
+[ext_resource type="PackedScene" uid="uid://ciyqy4foosh4b" path="res://Scene/Modals/LoreModal.tscn" id="19_f07r3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmf3h"]
 draw_center = false
@@ -182,3 +183,12 @@ scale = Vector2(1.00312, 0.715242)
 position = Vector2(1, 0)
 stream = ExtResource("17_pvi33")
 autoplay = true
+
+[node name="VerLoreButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "BtnTestModal"
+
+[node name="LoreModal" parent="." instance=ExtResource("19_f07r3")]
+layout_mode = 1

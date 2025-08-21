@@ -1,0 +1,298 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuy0h7g2movsg"]
+
+[ext_resource type="FontFile" uid="uid://s7s3defn6mn4" path="res://Fonts/Julygo.ttf" id="1_6vx81"]
+[ext_resource type="Texture2D" uid="uid://bdktqpga5f7tf" path="res://Assets/BackGround/Captura de tela 2025-08-07 120306.png" id="1_kvqlx"]
+[ext_resource type="PackedScene" uid="uid://o6t7ejofeghf" path="res://Scene/popups/fechar_button.tscn" id="1_ycymv"]
+[ext_resource type="Texture2D" uid="uid://5iis1u8afrn2" path="res://Assets/ui/Icones/CasaSimples.png" id="2_pknx6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycymv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="TelaLoja" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackGround" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 3.0
+offset_right = -1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00179, 0.992281)
+texture = ExtResource("1_kvqlx")
+
+[node name="LOJA" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+top_level = true
+layout_mode = 2
+offset_left = 229.0
+offset_top = 118.0
+offset_right = 327.0
+offset_bottom = 158.0
+scale = Vector2(0.881178, 0.894329)
+theme_override_fonts/font = ExtResource("1_6vx81")
+theme_override_font_sizes/font_size = 40
+text = "LOJA"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 106.0
+offset_right = 237.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.664071, 0.781933)
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 1200)
+layout_mode = 2
+
+[node name="Item1" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Item1Icone" type="TextureRect" parent="ScrollContainer/MarginContainer/VBoxContainer/Item1"]
+layout_mode = 2
+texture = ExtResource("2_pknx6")
+expand_mode = 2
+
+[node name="PanelDescricao1" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item1"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ycymv")
+
+[node name="LabelDescricao1" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item1/PanelDescricao1"]
+modulate = Color(0.000113828, 0.000113828, 0.000113828, 1)
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 23.0
+scale = Vector2(1.00249, 1)
+text = "Casa pequena com 4 comodos (quarto, banheiro, sala e cozinha)"
+autowrap_mode = 2
+
+[node name="LabelValor" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "R$150.000.000"
+
+[node name="Item2" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome2" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome2" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item2/PanelNome2"]
+layout_mode = 0
+text = "Item 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao2" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item2"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao2" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item2/PanelDescricao2"]
+layout_mode = 0
+text = "Descrição do item 2"
+
+[node name="Item3" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome3" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome3" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item3/PanelNome3"]
+layout_mode = 0
+text = "Item 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao3" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item3"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao3" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item3/PanelDescricao3"]
+layout_mode = 0
+text = "Descrição do Item 3"
+
+[node name="Item4" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome4" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome4" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item4/PanelNome4"]
+layout_mode = 0
+text = "Item 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao4" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item4"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao4" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item4/PanelDescricao4"]
+layout_mode = 0
+text = "Descrição do Item 4"
+
+[node name="Item5" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome5" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item5"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome5" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item5/PanelNome5"]
+layout_mode = 0
+text = "Item 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao5" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item5"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao5" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item5/PanelDescricao5"]
+layout_mode = 0
+text = "Descrição do Item 5"
+
+[node name="Item6" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome6" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item6"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome6" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item6/PanelNome6"]
+layout_mode = 0
+text = "Item 6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao6" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item6"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao6" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item6/PanelDescricao6"]
+layout_mode = 0
+text = "Descrição do Item 6"
+
+[node name="Item7" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome7" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item7"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome7" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item7/PanelNome7"]
+layout_mode = 0
+text = "Item 7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao7" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item7"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao7" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item7/PanelDescricao7"]
+layout_mode = 0
+text = "Descrição do Item 7"
+
+[node name="Item8" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome8" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item8"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome8" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item8/PanelNome8"]
+layout_mode = 0
+text = "Item 8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao8" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item8"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao8" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item8/PanelDescricao8"]
+layout_mode = 0
+text = "Descrição do Item 8"
+
+[node name="Item9" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome9" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item9"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome9" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item9/PanelNome9"]
+layout_mode = 0
+text = "Item 9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao9" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item9"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao9" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item9/PanelDescricao9"]
+layout_mode = 0
+text = "Descrição do Item 9"
+
+[node name="Item10" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome10" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item10"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome10" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item10/PanelNome10"]
+layout_mode = 0
+text = "Item 10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao10" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer/Item10"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao10" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Item10/PanelDescricao10"]
+layout_mode = 0
+text = "Descrição do Item 10"
+
+[node name="FecharButton" parent="." instance=ExtResource("1_ycymv")]
+layout_mode = 1
