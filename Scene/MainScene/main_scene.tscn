@@ -168,20 +168,10 @@ scale = Vector2(1.1996, 1.28754)
 texture_normal = ExtResource("5_majfj")
 texture_pressed = ExtResource("6_j1v2h")
 
-[node name="TelaAtiva" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 85.0
-offset_bottom = 85.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.00312, 0.715242)
-
 [node name="MusicaFundo" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1, 0)
 stream = ExtResource("17_pvi33")
+volume_db = 14.857
 autoplay = true
 
 [node name="VerLoreButton" type="Button" parent="."]

@@ -328,6 +328,11 @@ layout_mode = 0
 text = "Descrição do Item 10"
 
 [node name="FecharButton" parent="CanvasLayer" instance=ExtResource("1_ycymv")]
+anchors_preset = -1
+anchor_left = 0.872
+anchor_bottom = 0.099
+offset_left = 69.12
+offset_bottom = -67.32
 
 [node name="LOJA" type="Label" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
