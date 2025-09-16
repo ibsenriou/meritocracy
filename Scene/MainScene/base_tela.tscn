@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b32dvre6hgi3k"]
 
-[ext_resource type="Script" uid="uid://cvvlvf3ne3n6m" path="res://control.gd" id="1_g4v7n"]
+[ext_resource type="Script" uid="uid://bsitci7ynrhwr" path="res://Scene/MainScene/BaseTela.gd" id="1_g4v7n"]
 
 [node name="BaseTela" type="Control"]
 layout_mode = 3
@@ -11,18 +11,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g4v7n")
 
-[node name="Cabecalho" type="HBoxContainer" parent="."]
+[node name="TopoHUD" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LabelTempo" type="Label" parent="Cabecalho"]
+[node name="MesAnoLabel" type="Label" parent="TopoHUD"]
 layout_mode = 2
 
-[node name="LabelDinheiro" type="Label" parent="Cabecalho"]
+[node name="ContaCorrente" type="Label" parent="TopoHUD"]
 layout_mode = 2
 
-[node name="BotaoOpcoes" type="Button" parent="Cabecalho"]
+[node name="BotaoOpcoes" type="Button" parent="TopoHUD"]
 layout_mode = 2
 
 [node name="TelaAtiva" type="Control" parent="."]
@@ -35,17 +35,26 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ButtonMain" type="Button" parent="Rodape"]
+[node name="BotaopassarMes" type="TextureButton" parent="Rodape"]
 layout_mode = 2
 
-[node name="ButtonLoja" type="Button" parent="Rodape"]
+[node name="BotoesInferiores" type="HBoxContainer" parent="Rodape"]
 layout_mode = 2
 
-[node name="ButtonInventario" type="Button" parent="Rodape"]
+[node name="botaoLoja" type="TextureButton" parent="Rodape/BotoesInferiores"]
 layout_mode = 2
 
-[node name="ButtonUpgrade" type="Button" parent="Rodape"]
+[node name="BotaoInventario" type="TextureButton" parent="Rodape/BotoesInferiores"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Rodape"]
+[node name="BotaoStatus" type="TextureButton" parent="Rodape/BotoesInferiores"]
+layout_mode = 2
+
+[node name="BotaoD" type="TextureButton" parent="Rodape/BotoesInferiores"]
+layout_mode = 2
+
+[node name="BotaoE" type="TextureButton" parent="Rodape/BotoesInferiores"]
+layout_mode = 2
+
+[node name="VerLoreButton" type="Button" parent="Rodape/BotoesInferiores"]
 layout_mode = 2

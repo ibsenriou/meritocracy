@@ -52,7 +52,7 @@ func _on_botao_loja():
 	get_tree().change_scene_to_file("res://Scene/popups/TelaLoja.tscn") # ajuste caminho se quiser
 
 func _on_botao_inventario():
-	get_tree().change_scene_to_file("res://Scene/Modals/tela_inventario.tscn")
+	get_tree().change_scene_to_file("res://Scene/popups/tela_inventario.tscn")
 
 func _on_botao_status():
 	# exemplo

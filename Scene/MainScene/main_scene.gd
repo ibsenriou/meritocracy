@@ -89,25 +89,6 @@ func _set_input_blocked(block: bool):
 	botao_ver_lore.disabled = block
 
 
-# --- POPUPS ---
-func _abrir_cena_como_popup(cena: PackedScene) -> void:
-	if tela_atual and tela_atual.is_inside_tree():
-		if tela_atual.scene_file_path == cena.resource_path:
-			tela_atual.queue_free()
-			tela_atual = null
-			botao_passar_mes.show()
-			return
-		else:
-			tela_atual.queue_free()
-			tela_atual = null
-
-	botao_passar_mes.hide()
-	tela_atual = cena.instantiate()
-	tela_ativa.add_child(tela_atual)
-
-	await get_tree().process_frame
-	var area = tela_ativa.get_size()
-	tela_atual.position = area / 2 - tela_atual.size / 2
 
 # --- MECÂNICA DE TEMPO ---
 func _avancar_periodo() -> void:
