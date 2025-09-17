@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://b5x21cu7ldq3s"]
+
+[ext_resource type="Texture2D" uid="uid://dyfitvyms8v5s" path="res://kenney_ui-pack/PNG/Grey/Double/button_square_depth_flat.png" id="1_r36fu"]
+
+[resource]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+texture = ExtResource("1_r36fu")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 24.0

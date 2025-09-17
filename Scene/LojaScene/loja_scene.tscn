@@ -1,0 +1,425 @@
+[gd_scene load_steps=17 format=3 uid="uid://8jntgjy8vx5w"]
+
+[ext_resource type="Script" uid="uid://dnmeqecuealjj" path="res://Scene/LojaScene/loja_scene.gd" id="1_14md1"]
+[ext_resource type="Texture2D" uid="uid://w5o1s1q2vx5q" path="res://Assets/ui/Icones/IconedaLojaNormal-removebg-preview.png" id="2_jgppd"]
+[ext_resource type="Texture2D" uid="uid://drp8eccdo33xd" path="res://Assets/BackGround/2176524-azul-panoramico-estudio-fundo-com-brilho-branco-vetor.jpg" id="2_pufcs"]
+[ext_resource type="Texture2D" uid="uid://5iis1u8afrn2" path="res://Assets/ui/Icones/CasaSimples.png" id="3_oh2br"]
+[ext_resource type="Texture2D" uid="uid://c2ookhao16v4m" path="res://Assets/ui/Icones/IconedaLojaPressed-removebg-preview.png" id="3_txahq"]
+[ext_resource type="Texture2D" uid="uid://bee6655map557" path="res://Assets/ui/Icones/IconeinventárioNormal-removebg-preview.png" id="4_u457w"]
+[ext_resource type="Texture2D" uid="uid://c106rkrm3qo77" path="res://Assets/ui/Icones/IconeInventarioPressed-removebg-preview.png" id="5_mhkhl"]
+[ext_resource type="Texture2D" uid="uid://ba3agxymihhl8" path="res://Assets/ui/Icones/IconeStatusNormal-removebg-preview.png" id="6_pufcs"]
+[ext_resource type="Texture2D" uid="uid://b73i4urx8qs4o" path="res://Assets/ui/Icones/IconeStatusPressed-removebg-preview.png" id="7_16aka"]
+[ext_resource type="Texture2D" uid="uid://ccl5ciu07phr3" path="res://Assets/ui/Icones/download__2_-removebg-preview.png" id="8_fj6gk"]
+[ext_resource type="Texture2D" uid="uid://culjeefet1ytp" path="res://Assets/ui/Icones/download__3_-removebg-preview.png" id="9_oh2br"]
+[ext_resource type="Texture2D" uid="uid://b1lw0noky0n6j" path="res://Assets/ui/Icones/botao qualquer.png" id="10_nq1ni"]
+[ext_resource type="Texture2D" uid="uid://p601ce2b5r5c" path="res://Assets/ui/Icones/download__1_-removebg-preview.png" id="11_qcmv7"]
+[ext_resource type="Texture2D" uid="uid://d2p4mj2e70qke" path="res://Assets/ui/Icones/download-removebg-preview.png" id="16_cei2v"]
+[ext_resource type="Texture2D" uid="uid://c0bt4ol8tbu3w" path="res://Assets/ui/Icones/download__1_-removebg-preview (1).png" id="17_k3q8n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yl2hm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="LojaScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_14md1")
+
+[node name="BackGround" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -421.0
+offset_top = -223.0
+offset_right = 632.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.996416, 0.999227)
+texture = ExtResource("2_pufcs")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Container" type="CanvasLayer" parent="CanvasLayer"]
+scale = Vector2(2.33012, 1)
+transform = Transform2D(2.33012, 0, 0, 1, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 91.0
+offset_right = 90.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.856686, 0.735589)
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ScrollContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 1200)
+layout_mode = 2
+
+[node name="Item1" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Item1Icone" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item1"]
+layout_mode = 2
+texture = ExtResource("3_oh2br")
+expand_mode = 2
+
+[node name="PanelDescricao1" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item1"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yl2hm")
+
+[node name="LabelDescricao1" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item1/PanelDescricao1"]
+modulate = Color(0.000113828, 0.000113828, 0.000113828, 1)
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 23.0
+scale = Vector2(1.00249, 1)
+theme_override_font_sizes/font_size = 20
+text = "Casa pequena com 4 comodos (quarto, banheiro, sala e cozinha)"
+autowrap_mode = 2
+
+[node name="LabelValor1" type="Button" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "R$150k"
+
+[node name="Item2" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome2" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome2" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item2/PanelNome2"]
+layout_mode = 0
+text = "Item 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao2" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item2"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao2" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item2/PanelDescricao2"]
+layout_mode = 0
+text = "Descrição do item 2"
+
+[node name="LabelValor2" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "R$300k"
+
+[node name="Item3" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome3" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome3" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item3/PanelNome3"]
+layout_mode = 0
+text = "Item 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao3" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item3"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao3" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item3/PanelDescricao3"]
+layout_mode = 0
+text = "Descrição do Item 3"
+
+[node name="LabelValor3" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "R$700k"
+
+[node name="Item4" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome4" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome4" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item4/PanelNome4"]
+layout_mode = 0
+text = "Item 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao4" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item4"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao4" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item4/PanelDescricao4"]
+layout_mode = 0
+text = "Descrição do Item 4"
+
+[node name="LabelValor4" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item4"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "R$1kk"
+
+[node name="Item5" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome5" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item5"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome5" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item5/PanelNome5"]
+layout_mode = 0
+text = "Item 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao5" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item5"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao5" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item5/PanelDescricao5"]
+layout_mode = 0
+text = "Descrição do Item 5"
+
+[node name="LabelValor5" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item5"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "R$1.3kk"
+
+[node name="Item6" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome6" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item6"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome6" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item6/PanelNome6"]
+layout_mode = 0
+text = "Item 6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao6" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item6"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao6" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item6/PanelDescricao6"]
+layout_mode = 0
+text = "Descrição do Item 6"
+
+[node name="LabelValor6" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item6"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "R$1.6kk"
+
+[node name="Item7" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome7" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item7"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome7" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item7/PanelNome7"]
+layout_mode = 0
+text = "Item 7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao7" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item7"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao7" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item7/PanelDescricao7"]
+layout_mode = 0
+text = "Descrição do Item 7"
+
+[node name="LabelValor7" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item7"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "R$2kk"
+
+[node name="Item8" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome8" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item8"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome8" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item8/PanelNome8"]
+layout_mode = 0
+text = "Item 8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao8" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item8"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao8" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item8/PanelDescricao8"]
+layout_mode = 0
+text = "Descrição do Item 8"
+
+[node name="LabelValor8" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item8"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "R$1mi"
+
+[node name="Item9" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome9" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item9"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome9" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item9/PanelNome9"]
+layout_mode = 0
+text = "Item 9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao9" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item9"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao9" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item9/PanelDescricao9"]
+layout_mode = 0
+text = "Descrição do Item 9"
+
+[node name="Item10" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="PanelNome10" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item10"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LabelNome10" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item10/PanelNome10"]
+layout_mode = 0
+text = "Item 10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelDescricao10" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item10"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="LabelDescricao10" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item10/PanelDescricao10"]
+layout_mode = 0
+text = "Descrição do Item 10"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -81.0
+offset_right = 8.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.994357, 0.834499)
+mouse_filter = 0
+theme_override_constants/separation = 13
+
+[node name="BotaoLoja" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_jgppd")
+texture_pressed = ExtResource("3_txahq")
+
+[node name="BotaoInventario" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_u457w")
+texture_pressed = ExtResource("5_mhkhl")
+
+[node name="BotaoStatus" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_pufcs")
+texture_pressed = ExtResource("7_16aka")
+
+[node name="BotaoD" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_fj6gk")
+texture_pressed = ExtResource("9_oh2br")
+
+[node name="BotaoE" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_nq1ni")
+texture_pressed = ExtResource("11_qcmv7")
+
+[node name="TopoHUD" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+scale = Vector2(0.98227, 0.993433)
+
+[node name="MesAnoLabel" type="Label" parent="TopoHUD"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 13.2346
+offset_top = 21.1388
+offset_right = 101.235
+offset_bottom = 44.1388
+scale = Vector2(1.44898, 1.78571)
+text = "Jan/Ano 01 "
+
+[node name="ContaCorrenteLabel" type="Label" parent="TopoHUD"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 330.866
+offset_top = 25.1653
+offset_right = 395.866
+offset_bottom = 48.1653
+scale = Vector2(1.51852, 1.5)
+size_flags_horizontal = 4
+text = "R$ 00,00"
+
+[node name="BotaoOpcoes" type="TextureButton" parent="TopoHUD"]
+use_parent_material = true
+layout_mode = 2
+offset_left = 442.852
+offset_top = -1.00661
+offset_right = 542.852
+offset_bottom = 98.9934
+size_flags_horizontal = 8
+texture_normal = ExtResource("16_cei2v")
+texture_pressed = ExtResource("17_k3q8n")

@@ -1,0 +1,185 @@
+[gd_scene load_steps=14 format=3 uid="uid://d4hho2fi6drri"]
+
+[ext_resource type="Script" uid="uid://dsh6h41n551jf" path="res://Scene/MainScene/main_scene.gd" id="1_31fxm"]
+[ext_resource type="Texture2D" uid="uid://e6pi7okts6nc" path="res://Adobe Express - file.png" id="1_j4qrl"]
+[ext_resource type="Texture2D" uid="uid://drp8eccdo33xd" path="res://Assets/BackGround/2176524-azul-panoramico-estudio-fundo-com-brilho-branco-vetor.jpg" id="2_b5n06"]
+[ext_resource type="Texture2D" uid="uid://c6csbvcpwwfpw" path="res://Assets/ui/1-removebg-preview.png" id="4_620cj"]
+[ext_resource type="Texture2D" uid="uid://ch0kflpr2s75o" path="res://Assets/ui/3-removebg-preview.png" id="5_k8p41"]
+[ext_resource type="Texture2D" uid="uid://byv5t2qto2bmr" path="res://Assets/ui/4-removebg-preview.png" id="6_ar6hh"]
+[ext_resource type="Texture2D" uid="uid://1hof8s0ji3ko" path="res://Assets/ui/2-removebg-preview.png" id="6_majfj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_620cj"]
+bg_color = Color(0.205809, 0.634779, 0.911866, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.209436, 0.913996, 0.853265, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_majfj"]
+bg_color = Color(0, 1, 0.25, 0.415686)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_620cj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ar6hh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_majfj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1v2h"]
+
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_31fxm")
+
+[node name="Bordadecorativa" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_620cj")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 8.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.978709, 0.988562)
+texture = ExtResource("2_b5n06")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -77.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_majfj")
+
+[node name="PlayerContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.01441)
+
+[node name="Player" type="TextureRect" parent="PlayerContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.637
+anchor_top = 0.945
+anchor_right = 0.637
+anchor_bottom = 0.945
+offset_left = -415.64
+offset_top = -1087.36
+offset_right = -96.64
+offset_bottom = -616.357
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.81595, 1.77798)
+texture = ExtResource("1_j4qrl")
+expand_mode = 1
+
+[node name="ButtonsContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_right = 4.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hboxcontainer" type="HBoxContainer" parent="ButtonsContainer"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 1200.0
+offset_right = 348.0
+offset_bottom = 1240.0
+scale = Vector2(2.07052, 1.7332)
+
+[node name="BotãoLoja" type="Button" parent="ButtonsContainer/Hboxcontainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/icon = ExtResource("4_620cj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_620cj")
+
+[node name="BotãoInventário" type="Button" parent="ButtonsContainer/Hboxcontainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/icon = ExtResource("5_k8p41")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ar6hh")
+
+[node name="ButtonC" type="Button" parent="ButtonsContainer/Hboxcontainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/icon = ExtResource("6_majfj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_majfj")
+
+[node name="ButtonD" type="Button" parent="ButtonsContainer/Hboxcontainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/icon = ExtResource("6_ar6hh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_j1v2h")
+
+[node name="ButtonE" type="Button" parent="ButtonsContainer/Hboxcontainer"]
+visible = false
+modulate = Color(0.575, 0.15, 1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Proximo"
+
+[node name="PopupManager" type="Node" parent="."]
+
+[node name="BotaoDinheiro" type="Button" parent="."]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 1038.0
+offset_right = 490.0
+offset_bottom = 1071.0
+text = "Trabalhar"
+
+[node name="MesLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 3.0
+offset_right = 111.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 30
+text = "Jan/01"
+
+[node name="PoupancaLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 9.0
+offset_right = 506.0
+offset_bottom = 32.0
+text = "Poupança: R$ 0,00"
+
+[connection signal="pressed" from="ButtonsContainer/Hboxcontainer/BotãoLoja" to="." method="_on_button_a_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Hboxcontainer/BotãoInventário" to="." method="_on_button_b_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Hboxcontainer/ButtonC" to="." method="_on_button_c_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Hboxcontainer/ButtonD" to="." method="_on_button_d_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Hboxcontainer/ButtonE" to="." method="_on_button_e_pressed"]
+[connection signal="pressed" from="BotaoDinheiro" to="." method="_on_botao_dinheiro_pressed"]

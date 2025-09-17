@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlunwd15m72uc"]
+
+[ext_resource type="Script" uid="uid://bdmrn7shssrsn" path="res://Scene/Resumo mes/resumo_mes.gd" id="1_5s6u4"]
+[ext_resource type="Texture2D" uid="uid://5d5u7t7507p7" path="res://Assets/ui/Icones/fechar_x.png" id="2_jbvyf"]
+
+[node name="resumo_mes" type="PopupPanel"]
+size = Vector2i(131, 192)
+visible = true
+script = ExtResource("1_5s6u4")
+
+[node name="FecharBtn" type="Button" parent="."]
+layout_direction = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 127.0
+offset_bottom = 188.0
+scale = Vector2(0.55069, 0.463555)
+icon = ExtResource("2_jbvyf")
+expand_icon = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 127.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.4, 3.24)
+size_flags_vertical = 4
+color = Color(0, 0, 0, 0.545098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 127.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="TituloLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resumo do mês
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MesLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SalarioLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GastosLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ResultadoLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PoupancaLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="FecharBtn" to="." method="_on_fechar_btn_pressed"]

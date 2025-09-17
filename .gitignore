@@ -1,0 +1,13 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Godot-specific
+.import/
+export.cfg
+export_presets.cfg
+*.godot/tmp/
+
+# Optional: Ignore binaries
+*.exe
+*.apk
