@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5iis1u8afrn2"
-path="res://.godot/imported/CasaSimples.png-8926d4aed7de25f1f6c08bdfb278f069.ctex"
+uid="uid://ysfglscxae5t"
+path="res://.godot/imported/20250917_1023_Steampunk Gear Background_simple_compose_01k5bxcjxqeaktfqd1w4s5j0gh.png-353fc7068183f539378627e56930f838.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/Icones/CasaSimples.png"
-dest_files=["res://.godot/imported/CasaSimples.png-8926d4aed7de25f1f6c08bdfb278f069.ctex"]
+source_file="res://Assets/BackGround/20250917_1023_Steampunk Gear Background_simple_compose_01k5bxcjxqeaktfqd1w4s5j0gh.png"
+dest_files=["res://.godot/imported/20250917_1023_Steampunk Gear Background_simple_compose_01k5bxcjxqeaktfqd1w4s5j0gh.png-353fc7068183f539378627e56930f838.ctex"]
 
 [params]
 

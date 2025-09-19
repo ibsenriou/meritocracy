@@ -4,7 +4,8 @@
 [ext_resource type="Script" uid="uid://cir3thsu342fo" path="res://Scene/popups/tela_loja.gd" id="1_doo5y"]
 [ext_resource type="Texture2D" uid="uid://bdktqpga5f7tf" path="res://Assets/BackGround/Captura de tela 2025-08-07 120306.png" id="1_kvqlx"]
 [ext_resource type="PackedScene" uid="uid://o6t7ejofeghf" path="res://Scene/popups/fechar_button.tscn" id="1_ycymv"]
-[ext_resource type="Texture2D" uid="uid://5iis1u8afrn2" path="res://Assets/ui/Icones/CasaSimples.png" id="2_pknx6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kvqlx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycymv"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -63,7 +64,7 @@ layout_mode = 2
 
 [node name="Item1Icone" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item1"]
 layout_mode = 2
-texture = ExtResource("2_pknx6")
+texture = SubResource("CompressedTexture2D_kvqlx")
 expand_mode = 2
 
 [node name="PanelDescricao1" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item1"]

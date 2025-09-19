@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dsh6h41n551jf" path="res://Scene/MainScene/main_scene.gd" id="1_31fxm"]
 [ext_resource type="Texture2D" uid="uid://qsnbdkb3gqrg" path="res://Assets/BackGround/ChatGPT Image 31 de jul. de 2025, 15_23_08.png" id="2_x3hsr"]
-[ext_resource type="Texture2D" uid="uid://d2p4mj2e70qke" path="res://Assets/ui/Icones/download-removebg-preview.png" id="3_31qhy"]
 [ext_resource type="Texture2D" uid="uid://w5o1s1q2vx5q" path="res://Assets/ui/Icones/IconedaLojaNormal-removebg-preview.png" id="3_ar6hh"]
 [ext_resource type="FontFile" uid="uid://s7s3defn6mn4" path="res://Fonts/Julygo.ttf" id="3_bmf3h"]
 [ext_resource type="Texture2D" uid="uid://c0bt4ol8tbu3w" path="res://Assets/ui/Icones/download__1_-removebg-preview (1).png" id="4_dsbkn"]
@@ -13,10 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://c106rkrm3qo77" path="res://Assets/ui/Icones/IconeInventarioPressed-removebg-preview.png" id="6_xjgpl"]
 [ext_resource type="Texture2D" uid="uid://ba3agxymihhl8" path="res://Assets/ui/Icones/IconeStatusNormal-removebg-preview.png" id="7_8fs6c"]
 [ext_resource type="Texture2D" uid="uid://b73i4urx8qs4o" path="res://Assets/ui/Icones/IconeStatusPressed-removebg-preview.png" id="8_5x104"]
-[ext_resource type="Texture2D" uid="uid://ccl5ciu07phr3" path="res://Assets/ui/Icones/download__2_-removebg-preview.png" id="11_itruq"]
 [ext_resource type="Texture2D" uid="uid://culjeefet1ytp" path="res://Assets/ui/Icones/download__3_-removebg-preview.png" id="12_pvi33"]
 [ext_resource type="Texture2D" uid="uid://b1lw0noky0n6j" path="res://Assets/ui/Icones/botao qualquer.png" id="13_bmf3h"]
-[ext_resource type="Texture2D" uid="uid://p601ce2b5r5c" path="res://Assets/ui/Icones/download__1_-removebg-preview.png" id="14_f07r3"]
 [ext_resource type="AudioStream" uid="uid://djygprsm3ecq1" path="res://Sons/SomdoJOgo-.ogg" id="17_pvi33"]
 [ext_resource type="PackedScene" uid="uid://ciyqy4foosh4b" path="res://Scene/Modals/LoreModal.tscn" id="19_f07r3"]
 
@@ -24,6 +21,12 @@
 draw_center = false
 shadow_color = Color(0, 1, 0, 1)
 shadow_size = 12
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bmf3h"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6rjeg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1wl33"]
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
@@ -96,7 +99,7 @@ offset_top = -1.00661
 offset_right = 542.852
 offset_bottom = 98.9934
 size_flags_horizontal = 8
-texture_normal = ExtResource("3_31qhy")
+texture_normal = SubResource("CompressedTexture2D_bmf3h")
 texture_pressed = ExtResource("4_dsbkn")
 
 [node name="BotoesInferiores" type="Control" parent="."]
@@ -142,13 +145,13 @@ texture_pressed = ExtResource("8_5x104")
 
 [node name="BotaoD" type="TextureButton" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("11_itruq")
+texture_normal = SubResource("CompressedTexture2D_6rjeg")
 texture_pressed = ExtResource("12_pvi33")
 
 [node name="BotaoE" type="TextureButton" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("13_bmf3h")
-texture_pressed = ExtResource("14_f07r3")
+texture_pressed = SubResource("CompressedTexture2D_1wl33")
 
 [node name="BotaoPassarMes" type="TextureButton" parent="."]
 top_level = true
