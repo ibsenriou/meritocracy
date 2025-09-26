@@ -31,14 +31,20 @@ var tela_atual: Node = null
 var mes_atual: int = 1
 var ano_atual: int = 79
 var idade: int = 79
-var conta_corrente: float = 0.0
+
 
 func _ready():
 	_iniciar_jogo()
 
+
 # --- BOTÕES ---
 func _on_botao_loja_pressed():
-	get_tree().change_scene_to_file("res://Scene/LojaScene/loja_scene.tscn")
+	if get_tree().current_scene.scene_file_path == "res://Scene/LojaScene/loja_scene.tscn":
+		# já está na Loja → volta pra Main
+		get_tree().change_scene_to_file("res://Scene/MainScene/main_scene.tscn")
+	else:
+		# está na Main → abre Loja
+		get_tree().change_scene_to_file("res://Scene/LojaScene/loja_scene.tscn")
 
 func _on_botao_inventario_pressed():
 	_abrir_cena_como_popup(cena_inventario)
@@ -114,7 +120,8 @@ func _avancar_periodo() -> void:
 
 func _calcular_avanco_de_periodo(get_lucros_e_prejuizos: Callable) -> void:
 	var res: int = get_lucros_e_prejuizos.call()
-	conta_corrente += res
+	Global.add_money(res)   # atualiza o Global e emite sinal para atualizar HUD
+
 
 	mes_atual += 1
 	if mes_atual > 12:
@@ -137,7 +144,8 @@ func _atualizar_cabecalho_de_status():
 	var mes_texto = Utils.NOMES_MESES_3_CHARS[(mes_atual - 1)]
 	mes_ano_label.text = "%s/Ano %02d - Idade %d anos" % [mes_texto, ano_atual, idade]
 	# usa a função de abreviação para exibir o saldo formatado
-	conta_corrente_label.text = "R$ " + format_money(int(conta_corrente))
+	conta_corrente_label.text = "R$ " + Global.format_money(int(Global.dinheiro))
+
 
 # --- INICIALIZAÇÃO ---
 func _iniciar_jogo() -> void:

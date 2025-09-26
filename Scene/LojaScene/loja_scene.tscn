@@ -79,20 +79,20 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 1200)
 layout_mode = 2
 
-[node name="Item1" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="ItemCursoBasico" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="Item1Icone" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item1"]
+[node name="Item1Icone" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/ItemCursoBasico"]
 layout_mode = 2
 texture = ExtResource("3_qcmv7")
 expand_mode = 2
 
-[node name="PanelDescricao1" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item1"]
+[node name="PanelDescricao1" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/ItemCursoBasico"]
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 
-[node name="LabelDescricao1" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item1/PanelDescricao1"]
+[node name="LabelDescricao1" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/ItemCursoBasico/PanelDescricao1"]
 layout_mode = 0
 offset_right = 400.0
 offset_bottom = 23.0
@@ -102,7 +102,7 @@ text = "Título: Curso básico
 Descrição: Aumenta o salário base em $50 permanentemente."
 autowrap_mode = 2
 
-[node name="LabelValor1" type="Button" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item1"]
+[node name="BotaoComprarValor" type="Button" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/ItemCursoBasico"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "R$500"

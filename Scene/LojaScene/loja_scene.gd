@@ -1,22 +1,29 @@
 extends Control
 
-@onready var botao_loja: TextureButton = $HBoxContainer/BotaoLoja
+@onready var botao_comprar_valor: Button = $CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/ItemCursoBasico/BotaoComprarValor
 
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	botao_loja.pressed.connect(esse_nome_n_impoorta)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func esse_nome_n_impoorta():
-	print("Botao loja clicu")
-	get_tree().change_scene_to_file("res://Scene/MainScene/main_scene.tscn")
+func _ready():
 	
-func _on_button_pressed():
-	print("Botao loja clicu")
+	#Atualiza os valores da interface sempre que a loja abrir
+	#_atualizar_interface()
+	#
+##func _atualizar_interface():
+	#conta_corrente_label.text = "R$ " + str(Global.dinheiro)
+	#mes_ano_label.text = str(Global.mes) + "/" + str(Global.ano)
+	
+	# Atualiza o texto do botão com o preço real vindo do Global
+	var preco = Global.get_price("curso_basico")
+	botao_comprar_valor.text = "R$ " + str(preco)
+
+	# Conecta a ação de compra
+	botao_comprar_valor.pressed.connect(_on_botao_comprar_valor_pressed)
+
+func _on_botao_comprar_valor_pressed():
+	var item_id = "curso_basico"
+	if Global.buy_item(item_id):
+		print("✅ Compra bem-sucedida! Dinheiro:", Global.dinheiro, "Salário:", Global.salario)
+		botao_comprar_valor.disabled = true
+		botao_comprar_valor.text = "Comprado"
+	else:
+		print("❌ Sem dinheiro suficiente para comprar o curso básico.")

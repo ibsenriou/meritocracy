@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Utils="*res://Scene/MainScene/utils.gd"
+Global="*res://Scene/Scripts/global.gd"
 
 [display]
 
