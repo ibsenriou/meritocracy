@@ -39,12 +39,13 @@ func _ready():
 
 # --- BOTÕES ---
 func _on_botao_loja_pressed():
-	if get_tree().current_scene.scene_file_path == "res://Scene/LojaScene/loja_scene.tscn":
-		# já está na Loja → volta pra Main
-		get_tree().change_scene_to_file("res://Scene/MainScene/main_scene.tscn")
-	else:
+	get_tree().change_scene_to_file("res://Scene/LojaScene/loja_scene.tscn")
+	#if get_tree().current_scene.scene_file_path == "res://Scene/LojaScene/loja_scene.tscn":
+		## já está na Loja → volta pra Main
+		#get_tree().change_scene_to_file("res://Scene/MainScene/main_scene.tscn")
+	#else:
 		# está na Main → abre Loja
-		get_tree().change_scene_to_file("res://Scene/LojaScene/loja_scene.tscn")
+		
 
 func _on_botao_inventario_pressed():
 	_abrir_cena_como_popup(cena_inventario)

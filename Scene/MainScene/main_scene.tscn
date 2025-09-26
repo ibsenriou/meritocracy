@@ -1,32 +1,23 @@
-[gd_scene load_steps=21 format=3 uid="uid://d4hho2fi6drri"]
+[gd_scene load_steps=15 format=3 uid="uid://d4hho2fi6drri"]
 
 [ext_resource type="Script" uid="uid://dsh6h41n551jf" path="res://Scene/MainScene/main_scene.gd" id="1_31fxm"]
-[ext_resource type="Texture2D" uid="uid://qsnbdkb3gqrg" path="res://Assets/BackGround/ChatGPT Image 31 de jul. de 2025, 15_23_08.png" id="2_x3hsr"]
-[ext_resource type="Texture2D" uid="uid://w5o1s1q2vx5q" path="res://Assets/ui/Icones/IconedaLojaNormal-removebg-preview.png" id="3_ar6hh"]
+[ext_resource type="Texture2D" uid="uid://bumpypmgupmkv" path="res://Assets/ui/IconesMinimalistasTemporarios/WhatsApp Image 2025-09-22 at 09.39.47.jpeg" id="2_dsbkn"]
 [ext_resource type="FontFile" uid="uid://s7s3defn6mn4" path="res://Fonts/Julygo.ttf" id="3_bmf3h"]
-[ext_resource type="Texture2D" uid="uid://c0bt4ol8tbu3w" path="res://Assets/ui/Icones/download__1_-removebg-preview (1).png" id="4_dsbkn"]
-[ext_resource type="Texture2D" uid="uid://c2ookhao16v4m" path="res://Assets/ui/Icones/IconedaLojaPressed-removebg-preview.png" id="4_majfj"]
-[ext_resource type="Texture2D" uid="uid://bee6655map557" path="res://Assets/ui/Icones/IconeinventárioNormal-removebg-preview.png" id="5_j1v2h"]
-[ext_resource type="Texture2D" uid="uid://b7q2edrcjdsh" path="res://Assets/ui/Icones/IconeMarteloNormal-removebg-preview.png" id="5_majfj"]
-[ext_resource type="Texture2D" uid="uid://3x70iw7nacqw" path="res://Assets/ui/Icones/IconeMarteloPressed-removebg-preview.png" id="6_j1v2h"]
-[ext_resource type="Texture2D" uid="uid://c106rkrm3qo77" path="res://Assets/ui/Icones/IconeInventarioPressed-removebg-preview.png" id="6_xjgpl"]
-[ext_resource type="Texture2D" uid="uid://ba3agxymihhl8" path="res://Assets/ui/Icones/IconeStatusNormal-removebg-preview.png" id="7_8fs6c"]
-[ext_resource type="Texture2D" uid="uid://b73i4urx8qs4o" path="res://Assets/ui/Icones/IconeStatusPressed-removebg-preview.png" id="8_5x104"]
-[ext_resource type="Texture2D" uid="uid://culjeefet1ytp" path="res://Assets/ui/Icones/download__3_-removebg-preview.png" id="12_pvi33"]
-[ext_resource type="Texture2D" uid="uid://b1lw0noky0n6j" path="res://Assets/ui/Icones/botao qualquer.png" id="13_bmf3h"]
+[ext_resource type="Texture2D" uid="uid://dgesgasmv6cmv" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 184149.png" id="4_31qhy"]
+[ext_resource type="Texture2D" uid="uid://dw0u0hdsc73je" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 114200.png" id="5_tfvbe"]
+[ext_resource type="Texture2D" uid="uid://bg1csq6emlxru" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 114255.png" id="6_itruq"]
+[ext_resource type="Texture2D" uid="uid://cf0r6kmdoim1r" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182526.png" id="7_tfvbe"]
+[ext_resource type="Texture2D" uid="uid://dulqq4skcdxyr" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182544.png" id="8_itruq"]
+[ext_resource type="Texture2D" uid="uid://c6nojutq318uu" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182843.png" id="9_pvi33"]
+[ext_resource type="Texture2D" uid="uid://6ke45wua0xh6" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182600.png" id="10_bmf3h"]
+[ext_resource type="Texture2D" uid="uid://cax7nd88rn5au" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 183641.png" id="11_31qhy"]
 [ext_resource type="AudioStream" uid="uid://djygprsm3ecq1" path="res://Sons/SomdoJOgo-.ogg" id="17_pvi33"]
 [ext_resource type="PackedScene" uid="uid://ciyqy4foosh4b" path="res://Scene/Modals/LoreModal.tscn" id="19_f07r3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmf3h"]
 draw_center = false
-shadow_color = Color(0, 1, 0, 1)
+shadow_color = Color(1, 1, 1, 1)
 shadow_size = 12
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bmf3h"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6rjeg"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1wl33"]
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
@@ -45,7 +36,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
-texture = ExtResource("2_x3hsr")
+texture = ExtResource("2_dsbkn")
 expand_mode = 1
 
 [node name="TituloJogo" type="Label" parent="."]
@@ -54,7 +45,6 @@ offset_left = 76.0
 offset_top = 129.0
 offset_right = 466.0
 offset_bottom = 202.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_bmf3h")
 theme_override_font_sizes/font_size = 54
 theme_override_styles/normal = SubResource("StyleBoxFlat_bmf3h")
@@ -71,7 +61,6 @@ grow_horizontal = 2
 scale = Vector2(0.98227, 0.993433)
 
 [node name="MesAnoLabel" type="Label" parent="TopoHUD"]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 offset_left = 13.2346
 offset_top = 21.1388
@@ -81,7 +70,6 @@ scale = Vector2(1.44898, 1.78571)
 text = "Jan/Ano 01 "
 
 [node name="ContaCorrenteLabel" type="Label" parent="TopoHUD"]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 offset_left = 330.866
 offset_top = 25.1653
@@ -99,8 +87,9 @@ offset_top = -1.00661
 offset_right = 542.852
 offset_bottom = 98.9934
 size_flags_horizontal = 8
-texture_normal = SubResource("CompressedTexture2D_bmf3h")
-texture_pressed = ExtResource("4_dsbkn")
+texture_normal = ExtResource("4_31qhy")
+texture_pressed = ExtResource("6_itruq")
+stretch_mode = 0
 
 [node name="BotoesInferiores" type="Control" parent="."]
 layout_mode = 1
@@ -113,45 +102,45 @@ grow_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BotoesInferiores"]
 show_behind_parent = true
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -81.0
-offset_right = 2.0
-offset_bottom = 19.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.994357, 0.801679)
+layout_mode = 0
+offset_left = 3.0
+offset_top = -76.0
+offset_right = 343.0
+offset_bottom = -3.0
+scale = Vector2(1.56619, 1.0118)
 mouse_filter = 0
 theme_override_constants/separation = 13
 
 [node name="BotaoLoja" type="TextureButton" parent="BotoesInferiores/HBoxContainer"]
+modulate = Color(0.646029, 0.646029, 0.646029, 1)
 layout_mode = 2
-texture_normal = ExtResource("3_ar6hh")
-texture_pressed = ExtResource("4_majfj")
+texture_normal = ExtResource("5_tfvbe")
+texture_pressed = ExtResource("6_itruq")
+stretch_mode = 5
 
 [node name="BotaoInventario" type="TextureButton" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_j1v2h")
-texture_pressed = ExtResource("6_xjgpl")
+texture_normal = ExtResource("7_tfvbe")
+texture_pressed = ExtResource("6_itruq")
+stretch_mode = 0
 
 [node name="BotaoStatus" type="TextureButton" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("7_8fs6c")
-texture_pressed = ExtResource("8_5x104")
+texture_normal = ExtResource("8_itruq")
+texture_pressed = ExtResource("6_itruq")
+stretch_mode = 0
 
 [node name="BotaoD" type="TextureButton" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
-texture_normal = SubResource("CompressedTexture2D_6rjeg")
-texture_pressed = ExtResource("12_pvi33")
+texture_normal = ExtResource("9_pvi33")
+texture_pressed = ExtResource("6_itruq")
+stretch_mode = 0
 
 [node name="BotaoE" type="TextureButton" parent="BotoesInferiores/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("13_bmf3h")
-texture_pressed = SubResource("CompressedTexture2D_1wl33")
+texture_normal = ExtResource("10_bmf3h")
+texture_pressed = ExtResource("6_itruq")
+stretch_mode = 0
 
 [node name="BotaoPassarMes" type="TextureButton" parent="."]
 top_level = true
@@ -168,8 +157,9 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1996, 1.28754)
-texture_normal = ExtResource("5_majfj")
-texture_pressed = ExtResource("6_j1v2h")
+texture_normal = ExtResource("6_itruq")
+texture_pressed = ExtResource("11_31qhy")
+stretch_mode = 3
 
 [node name="TelaAtiva" type="Control" parent="."]
 layout_mode = 1
@@ -182,7 +172,7 @@ offset_right = -2.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.00115, 0.706679)
+scale = Vector2(1.00739, 0.700245)
 
 [node name="MusicaFundo" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1, 0)

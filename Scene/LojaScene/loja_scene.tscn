@@ -1,30 +1,17 @@
-[gd_scene load_steps=24 format=3 uid="uid://8jntgjy8vx5w"]
+[gd_scene load_steps=13 format=3 uid="uid://8jntgjy8vx5w"]
 
 [ext_resource type="Script" uid="uid://dnmeqecuealjj" path="res://Scene/LojaScene/loja_scene.gd" id="1_14md1"]
-[ext_resource type="Texture2D" uid="uid://w5o1s1q2vx5q" path="res://Assets/ui/Icones/IconedaLojaNormal-removebg-preview.png" id="2_jgppd"]
-[ext_resource type="Texture2D" uid="uid://ysfglscxae5t" path="res://Assets/BackGround/20250917_1023_Steampunk Gear Background_simple_compose_01k5bxcjxqeaktfqd1w4s5j0gh.png" id="2_mhkhl"]
-[ext_resource type="Texture2D" uid="uid://bristcxe84wim" path="res://Assets/ui/Icones/Captura de tela 2025-09-17 103050.png" id="3_qcmv7"]
-[ext_resource type="Texture2D" uid="uid://c2ookhao16v4m" path="res://Assets/ui/Icones/IconedaLojaPressed-removebg-preview.png" id="3_txahq"]
-[ext_resource type="Texture2D" uid="uid://b5oi1v5esg8s7" path="res://Assets/ui/Icones/Captura de tela 2025-09-17 103113.png" id="4_cei2v"]
-[ext_resource type="Texture2D" uid="uid://bee6655map557" path="res://Assets/ui/Icones/IconeinventárioNormal-removebg-preview.png" id="4_u457w"]
-[ext_resource type="Texture2D" uid="uid://dinnsds783e3f" path="res://Assets/ui/Icones/Captura de tela 2025-09-17 103130.png" id="5_k3q8n"]
-[ext_resource type="Texture2D" uid="uid://c106rkrm3qo77" path="res://Assets/ui/Icones/IconeInventarioPressed-removebg-preview.png" id="5_mhkhl"]
-[ext_resource type="Texture2D" uid="uid://ba3agxymihhl8" path="res://Assets/ui/Icones/IconeStatusNormal-removebg-preview.png" id="6_pufcs"]
-[ext_resource type="Texture2D" uid="uid://2f0kb6eaxoud" path="res://Assets/ui/Icones/Captura de tela 2025-09-17 103151.png" id="6_yl2hm"]
-[ext_resource type="Texture2D" uid="uid://b73i4urx8qs4o" path="res://Assets/ui/Icones/IconeStatusPressed-removebg-preview.png" id="7_16aka"]
-[ext_resource type="Texture2D" uid="uid://mwbpad3h7hwp" path="res://Assets/ui/Icones/Captura de tela 2025-09-17 103421.png" id="7_cei2v"]
-[ext_resource type="Texture2D" uid="uid://u20sa4sbxq5v" path="res://Assets/ui/Icones/Captura de tela 2025-09-17 103220.png" id="7_yvuse"]
-[ext_resource type="Texture2D" uid="uid://djjusdjkueynv" path="res://Assets/ui/Icones/Captura de tela 2025-09-17 103242.png" id="8_0edyx"]
-[ext_resource type="Texture2D" uid="uid://chpxweo0kwnao" path="res://Assets/ui/Icones/Captura de tela 2025-09-17 103325.png" id="9_0fx2m"]
-[ext_resource type="Texture2D" uid="uid://culjeefet1ytp" path="res://Assets/ui/Icones/download__3_-removebg-preview.png" id="9_oh2br"]
-[ext_resource type="Texture2D" uid="uid://b01r6p45w0hmx" path="res://Assets/ui/Icones/Captura de tela 2025-09-17 103353.png" id="10_hppyb"]
-[ext_resource type="Texture2D" uid="uid://b1lw0noky0n6j" path="res://Assets/ui/Icones/botao qualquer.png" id="10_nq1ni"]
-[ext_resource type="Texture2D" uid="uid://cb7r72glyrehi" path="res://Assets/ui/Icones/Captura de tela 2025-09-17 103408.png" id="11_m07hr"]
-[ext_resource type="Texture2D" uid="uid://c0bt4ol8tbu3w" path="res://Assets/ui/Icones/download__1_-removebg-preview (1).png" id="17_k3q8n"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6rjeg"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1wl33"]
+[ext_resource type="Texture2D" uid="uid://bumpypmgupmkv" path="res://Assets/ui/IconesMinimalistasTemporarios/WhatsApp Image 2025-09-22 at 09.39.47.jpeg" id="2_cei2v"]
+[ext_resource type="Texture2D" uid="uid://dlv1lh4264f2f" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 183953.png" id="3_pufcs"]
+[ext_resource type="Texture2D" uid="uid://bw1vhxar1rc3j" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 184005.png" id="4_16aka"]
+[ext_resource type="Texture2D" uid="uid://c2d3dk0afevxc" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 184018.png" id="5_fj6gk"]
+[ext_resource type="Texture2D" uid="uid://dw0u0hdsc73je" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 114200.png" id="13_nq1ni"]
+[ext_resource type="Texture2D" uid="uid://bg1csq6emlxru" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 114255.png" id="14_qcmv7"]
+[ext_resource type="Texture2D" uid="uid://cf0r6kmdoim1r" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182526.png" id="15_cei2v"]
+[ext_resource type="Texture2D" uid="uid://dulqq4skcdxyr" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182544.png" id="16_k3q8n"]
+[ext_resource type="Texture2D" uid="uid://c6nojutq318uu" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182843.png" id="17_yl2hm"]
+[ext_resource type="Texture2D" uid="uid://6ke45wua0xh6" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182600.png" id="18_yvuse"]
+[ext_resource type="Texture2D" uid="uid://dgesgasmv6cmv" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 184149.png" id="21_k3q8n"]
 
 [node name="LojaScene" type="Control"]
 layout_mode = 3
@@ -36,7 +23,6 @@ grow_vertical = 2
 script = ExtResource("1_14md1")
 
 [node name="BackGround" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.258824)
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -48,7 +34,7 @@ offset_bottom = 856.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.524127, 0.44604)
-texture = ExtResource("2_mhkhl")
+texture = ExtResource("2_cei2v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -85,7 +71,7 @@ layout_mode = 2
 
 [node name="Item1Icone" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/ItemCursoBasico"]
 layout_mode = 2
-texture = ExtResource("3_qcmv7")
+texture = ExtResource("3_pufcs")
 expand_mode = 2
 
 [node name="PanelDescricao1" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/ItemCursoBasico"]
@@ -114,7 +100,7 @@ layout_mode = 2
 [node name="Item2Icone" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("4_cei2v")
+texture = ExtResource("4_16aka")
 expand_mode = 2
 
 [node name="PanelDescricao2" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item2"]
@@ -141,7 +127,7 @@ layout_mode = 2
 [node name="PanelNome3" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item3"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("5_k3q8n")
+texture = ExtResource("5_fj6gk")
 expand_mode = 2
 
 [node name="PanelDescricao3" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item3"]
@@ -168,7 +154,7 @@ layout_mode = 2
 [node name="PanelNome4" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item4"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("6_yl2hm")
+texture = ExtResource("3_pufcs")
 expand_mode = 2
 stretch_mode = 6
 
@@ -187,10 +173,10 @@ text = "Título: Casa simples
 Descrição: Reduz despesas mensais em $500 (menos gastos com aluguel)."
 autowrap_mode = 2
 
-[node name="LabelValor4" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item4"]
+[node name="LabelValor4" type="Button" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item4"]
 layout_mode = 2
-texture = ExtResource("7_cei2v")
-expand_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "R$100k"
 
 [node name="Item5" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
@@ -199,7 +185,7 @@ layout_mode = 2
 [node name="PanelNome5" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item5"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("7_yvuse")
+texture = ExtResource("4_16aka")
 expand_mode = 2
 
 [node name="PanelDescricao5" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item5"]
@@ -214,10 +200,10 @@ text = "Título: Casa intermediária
 Descrição: Reduz despesas mensais em $1000 e aumenta prestígio social."
 autowrap_mode = 2
 
-[node name="LabelValor5" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item5"]
+[node name="LabelValor5" type="Button" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item5"]
 layout_mode = 2
-texture = ExtResource("7_cei2v")
-expand_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "R$ 1kk"
 
 [node name="Item6" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
@@ -226,7 +212,7 @@ layout_mode = 2
 [node name="PanelNome6" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item6"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("8_0edyx")
+texture = ExtResource("5_fj6gk")
 expand_mode = 2
 
 [node name="PanelDescricao6" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item6"]
@@ -253,7 +239,7 @@ layout_mode = 2
 [node name="PanelNome7" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item7"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("9_0fx2m")
+texture = ExtResource("3_pufcs")
 expand_mode = 2
 
 [node name="PanelDescricao7" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item7"]
@@ -276,7 +262,7 @@ layout_mode = 2
 [node name="PanelNome8" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item8"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("10_hppyb")
+texture = ExtResource("4_16aka")
 expand_mode = 2
 
 [node name="PanelDescricao8" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item8"]
@@ -300,7 +286,7 @@ layout_mode = 2
 [node name="PanelNome9" type="TextureRect" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item9"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("11_m07hr")
+texture = ExtResource("5_fj6gk")
 expand_mode = 2
 
 [node name="PanelDescricao9" type="Panel" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item9"]
@@ -335,45 +321,44 @@ text = "Descrição do Item 10"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 show_behind_parent = true
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -81.0
-offset_right = 8.0
-offset_bottom = 19.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.994357, 0.834499)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 594.0
+offset_right = 343.0
+offset_bottom = 694.0
+scale = Vector2(1.57368, 0.909948)
 mouse_filter = 0
 theme_override_constants/separation = 13
 
 [node name="BotaoLoja" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("2_jgppd")
-texture_pressed = ExtResource("3_txahq")
+texture_normal = ExtResource("13_nq1ni")
+texture_pressed = ExtResource("14_qcmv7")
+stretch_mode = 0
 
 [node name="BotaoInventario" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("4_u457w")
-texture_pressed = ExtResource("5_mhkhl")
+texture_normal = ExtResource("15_cei2v")
+texture_pressed = ExtResource("14_qcmv7")
+stretch_mode = 0
 
 [node name="BotaoStatus" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("6_pufcs")
-texture_pressed = ExtResource("7_16aka")
+texture_normal = ExtResource("16_k3q8n")
+texture_pressed = ExtResource("14_qcmv7")
+stretch_mode = 0
 
 [node name="BotaoD" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
-texture_normal = SubResource("CompressedTexture2D_6rjeg")
-texture_pressed = ExtResource("9_oh2br")
+texture_normal = ExtResource("17_yl2hm")
+texture_pressed = ExtResource("14_qcmv7")
+stretch_mode = 0
 
 [node name="BotaoE" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("10_nq1ni")
-texture_pressed = SubResource("CompressedTexture2D_1wl33")
+texture_normal = ExtResource("18_yvuse")
+texture_pressed = ExtResource("14_qcmv7")
+stretch_mode = 0
 
 [node name="TopoHUD" type="Control" parent="."]
 layout_mode = 1
@@ -384,7 +369,6 @@ grow_horizontal = 2
 scale = Vector2(0.98227, 0.993433)
 
 [node name="MesAnoLabel" type="Label" parent="TopoHUD"]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 offset_left = 13.2346
 offset_top = 21.1388
@@ -394,7 +378,6 @@ scale = Vector2(1.44898, 1.78571)
 text = "Jan/Ano 01 "
 
 [node name="ContaCorrenteLabel" type="Label" parent="TopoHUD"]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 offset_left = 330.866
 offset_top = 25.1653
@@ -405,6 +388,7 @@ size_flags_horizontal = 4
 text = "R$ 00,00"
 
 [node name="BotaoOpcoes" type="TextureButton" parent="TopoHUD"]
+modulate = Color(0.54099, 0.54099, 0.54099, 1)
 use_parent_material = true
 layout_mode = 2
 offset_left = 442.852
@@ -412,5 +396,6 @@ offset_top = -1.00661
 offset_right = 542.852
 offset_bottom = 98.9934
 size_flags_horizontal = 8
-texture_normal = ExtResource("17_k3q8n")
-texture_pressed = ExtResource("17_k3q8n")
+texture_normal = ExtResource("21_k3q8n")
+texture_pressed = ExtResource("21_k3q8n")
+stretch_mode = 0
