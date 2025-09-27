@@ -28,7 +28,7 @@ func _inicializar_itens():
 			for child in item_hbox.get_children():
 				if child is Label and child.name.begins_with("LabelValor"):
 					if precos.has(item_hbox.name):
-						child.text = formatar_valor(precos[item_hbox.name])
+						child.text = Global.formatar_valor(precos[item_hbox.name])
 					else:
 						child.text = "Sem preço"
 
@@ -65,13 +65,4 @@ func _atualizar_label_item(item_name):
 		if item_hbox.name == item_name:
 			for child in item_hbox.get_children():
 				if child is Label and child.name.begins_with("LabelValor"):
-					child.text = formatar_valor(precos[item_name])
-
-func formatar_valor(value: int) -> String:
-	if value >= 1000000:
-		var v = round((value / 1000000.0) * 100) / 100.0
-		return str(v).rstrip("0").rstrip(".") + "mi"
-	elif value >= 1000:
-		var v = round((value / 1000.0) * 100) / 100.0
-		return str(v).rstrip("0").rstrip(".") + "k"
-	return str(value)
+					child.text = Global.formatar_valor(precos[item_name])

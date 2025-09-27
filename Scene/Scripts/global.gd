@@ -2,15 +2,15 @@ extends Node
 
 
 # --- Sinais ---
-signal dinheiro_changed(new_value)
-signal salario_changed(new_value)
+signal money_changed(new_value)
+signal salary_changed(new_value)
+signal period_advanced(new_value)
 
 # --- Dados do jogador ---
-var dinheiro: int = 0
-var salario: int = 2000
-var mes: int = 1
-var ano: int = 1
-var idade: int = 18
+var money: int = 0 # Valor na conta
+var salary: int = 2000 # Salario Mensal
+var expenses: int = 1900 # Gastos mensais
+var time: int = 1 # Valor inteiro usado para calcular o tempo interno no jogo
 
 # --- Loja (itens sempre disponíveis) ---
 # Cada item tem: { "price": int, "bonus": int }
@@ -20,27 +20,32 @@ var loja_items: Dictionary = {
 	"curso_avanc":  {"price": 150000,"bonus": 1500}
 }
 
+# ---------------- Tempo ------------------
+func advance_period(lucro: int) -> void:
+	add_money(lucro)
+
+	time += 1
+
+	emit_signal("period_advanced", time)
+
 # ---------------- Dinheiro ----------------
 func can_afford(amount: int) -> bool:
-	return dinheiro >= amount
+	return money >= amount
 
 func add_money(amount: int) -> void:
-	dinheiro += amount
-	emit_signal("dinheiro_changed", dinheiro)
-
-func spend_money(amount: int) -> bool:
-	if can_afford(amount):
-		dinheiro -= amount
-		emit_signal("dinheiro_changed", dinheiro)
-		return true
-	return false
+	money += amount
+	emit_signal("money_changed", money)
+#
+func spend_money(amount: int) -> void:
+	money -= amount
+	emit_signal("money_changed", money)
 
 func get_salary() -> int:
-	return salario
+	return salary
 
 func add_salary(amount: int) -> void:
-	salario += amount
-	emit_signal("salario_changed", salario)
+	salary += amount
+	emit_signal("salary_changed", salary)
 
 # ---------------- Loja ----------------
 func get_price(item_id: String) -> int:
@@ -56,14 +61,16 @@ func buy_item(item_id: String) -> bool:
 	var price = int(data["price"])
 	var bonus = int(data["bonus"])
 
-	if spend_money(price):
+	if can_afford(price):
+		spend_money(price)
+		
 		if bonus != 0:
 			add_salary(bonus)
 		return true
 	return false
 
 # ---------------- Formatação ----------------
-static func format_money(value: int) -> String:
+func format_money(value: int) -> String:
 	if value >= 1_000_000:
 		var result = value / 1_000_000.0
 		var s = str(round(result * 10) / 10.0)

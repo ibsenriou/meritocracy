@@ -1,7 +1,6 @@
 extends Control
 
 # --- CENAS DOS POPUPS ---
-@onready var cena_loja: PackedScene = preload("res://Scene/popups/TelaLoja.tscn")
 @onready var cena_inventario: PackedScene = preload("res://Scene/popups/tela_inventario.tscn")
 @onready var cena_opcoes: PackedScene = preload("res://Scene/popups/TelaOpcoes.tscn")
 @onready var cena_c: PackedScene = preload("res://Scene/popups/tela_c.tscn")
@@ -27,11 +26,6 @@ var LoreModalScene = preload("res://Scene/Modals/LoreModal.tscn")
 @onready var tela_ativa: Control = $TelaAtiva
 var tela_atual: Node = null
 
-# --- ESTADO DO JOGO ---
-var mes_atual: int = 1
-var ano_atual: int = 79
-var idade: int = 79
-
 
 func _ready():
 	_iniciar_jogo()
@@ -40,12 +34,6 @@ func _ready():
 # --- BOTÕES ---
 func _on_botao_loja_pressed():
 	get_tree().change_scene_to_file("res://Scene/LojaScene/loja_scene.tscn")
-	#if get_tree().current_scene.scene_file_path == "res://Scene/LojaScene/loja_scene.tscn":
-		## já está na Loja → volta pra Main
-		#get_tree().change_scene_to_file("res://Scene/MainScene/main_scene.tscn")
-	#else:
-		# está na Main → abre Loja
-		
 
 func _on_botao_inventario_pressed():
 	_abrir_cena_como_popup(cena_inventario)
@@ -121,31 +109,18 @@ func _avancar_periodo() -> void:
 
 func _calcular_avanco_de_periodo(get_lucros_e_prejuizos: Callable) -> void:
 	var res: int = get_lucros_e_prejuizos.call()
-	Global.add_money(res)   # atualiza o Global e emite sinal para atualizar HUD
-
-
-	mes_atual += 1
-	if mes_atual > 12:
-		mes_atual = 1
-		ano_atual += 1
-		idade += 1
-
-	if idade >= 80:
-		print("🔁 Nova geração iniciada!")
-		idade = 18
-		ano_atual = 1
-		mes_atual = 1
-
-	print("Mes atual: ", mes_atual)
-	print("Ano atual: " + str(ano_atual))
-	_atualizar_cabecalho_de_status()
+	Global.advance_period(res)   # atualiza dinheiro + tempo
 
 # --- HUD ---
 func _atualizar_cabecalho_de_status():
-	var mes_texto = Utils.NOMES_MESES_3_CHARS[(mes_atual - 1)]
-	mes_ano_label.text = "%s/Ano %02d - Idade %d anos" % [mes_texto, ano_atual, idade]
-	# usa a função de abreviação para exibir o saldo formatado
-	conta_corrente_label.text = "R$ " + Global.format_money(int(Global.dinheiro))
+	mes_ano_label.text = "Tempo Atual: " + str(Global.time)
+	conta_corrente_label.text = "R$ " + Global.format_money(int(Global.money))
+
+func _on_money_changed(new_value):
+	conta_corrente_label.text = "R$ " + Global.format_money(int(new_value))
+
+func _on_period_advanced(_new_value):
+	_atualizar_cabecalho_de_status()
 
 
 # --- INICIALIZAÇÃO ---
@@ -158,28 +133,16 @@ func _iniciar_jogo() -> void:
 	botao_d.pressed.connect(_on_botao_D_pressed)
 	botao_e.pressed.connect(_on_botao_e_pressed)
 	botao_ver_lore.pressed.connect(_on_ver_lore_button_pressed)
+	
+	Global.connect("money_changed", Callable(self, "_on_money_changed"))
+	Global.connect("period_advanced", Callable(self, "_on_period_advanced"))
+
+	_atualizar_cabecalho_de_status()
 
 	_atualizar_cabecalho_de_status()
 
 # --- LUCROS/PREJUÍZOS ---
-func _calcular_ganhos_e_prejuizos(args = 0) -> int:
-	if args > 0:
-		return args
-	return 100
-
-
-
-### --- UTILS ---
-# TODO p/ Gabriel - No futuro, avaliar a viabilidade de extrair funcoes
-# auxiliares dessa natureza para modulos externos para enxugar o script main
-
-# Converte valores numéricos para formato abreviado (1k, 1.5k, 1kk, etc.)
-static func format_money(value: int) -> String:
-	if value >= 1_000_000:  # milhão
-		var result = value / 1_000_000.0
-		return str(round(result * 10) / 10) + "kk"  # 1kk, 1.5kk etc.
-	elif value >= 1_000:  # milhar
-		var result = value / 1_000.0
-		return str(round(result * 10) / 10) + "k"   # 1k, 2.5k etc.
-	else:
-		return str(value)  # valores pequenos ficam normais
+func _calcular_ganhos_e_prejuizos() -> int:
+	## Após atualizados os valores de Gasto e Salário, o cálculo de Lucros
+	## e prejuízo é uma simples subtração
+	return Global.salary - Global.expenses

@@ -8,19 +8,23 @@ extends Control
 
 func _ready():
 	botao_loja.pressed.connect(_on_botao_loja_pressed)
+	Global.connect("money_changed", Callable(self, "_on_money_changed"))
 	
 	#Atualiza os valores da interface sempre que a loja abrir
-	_atualizar_interface()
+	_atualizar_cabecalho_de_status()
 
 func _on_botao_loja_pressed():
 		## já está na Loja → volta pra Main
 	get_tree().change_scene_to_file("res://Scene/MainScene/main_scene.tscn")
 	
 
+func _on_money_changed(new_value):
+	conta_corrente_label.text = "R$ " + Global.format_money(int(new_value))
 	
-func _atualizar_interface():
-	conta_corrente_label.text = "R$ " + str(Global.dinheiro)
-	mes_ano_label.text = str(Global.mes) + "/" + str(Global.ano)
+func _atualizar_cabecalho_de_status():
+	mes_ano_label.text = "Tempo Atual: " + str(Global.time)
+	conta_corrente_label.text = "R$ " + Global.format_money(int(Global.money))
+
 	
 	# Atualiza o texto do botão com o preço real vindo do Global
 	var preco = Global.get_price("curso_basico")
@@ -32,7 +36,7 @@ func _atualizar_interface():
 func _on_botao_comprar_valor_pressed():
 	var item_id = "curso_basico"
 	if Global.buy_item(item_id):
-		print("✅ Compra bem-sucedida! Dinheiro:", Global.dinheiro, "Salário:", Global.salario)
+		print("✅ Compra bem-sucedida! Dinheiro: ", Global.money, " & Salário: ", Global.salary)
 		
 	else:
 		print("❌ Sem dinheiro suficiente para comprar o curso básico.")
