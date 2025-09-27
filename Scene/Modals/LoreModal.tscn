@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://23r0nrdb757d" path="res://Scene/Scripts/LoreModal.gd" id="1_4566m"]
 [ext_resource type="Shader" uid="uid://daaix0yjbxxaw" path="res://Scene/Modals/LoreModal.gdshader" id="2_yw5l5"]
 [ext_resource type="FontFile" uid="uid://s7s3defn6mn4" path="res://Fonts/Julygo.ttf" id="3_lk3nl"]
-[ext_resource type="AudioStream" uid="uid://dh2ok0l0ttuxf" path="res://Sons/Golden GleamSomdaLore.wav" id="4_r4xct"]
+[ext_resource type="AudioStream" uid="uid://dh2ok0l0ttuxf" path="res://Assets/Music/funky_theme.ogg" id="4_r4xct"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jc8ku"]
 shader = ExtResource("2_yw5l5")

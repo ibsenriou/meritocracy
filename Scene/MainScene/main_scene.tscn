@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d4hho2fi6drri"]
+[gd_scene load_steps=14 format=3 uid="uid://d4hho2fi6drri"]
 
 [ext_resource type="Script" uid="uid://dsh6h41n551jf" path="res://Scene/MainScene/main_scene.gd" id="1_31fxm"]
 [ext_resource type="Texture2D" uid="uid://bumpypmgupmkv" path="res://Assets/ui/IconesMinimalistasTemporarios/WhatsApp Image 2025-09-22 at 09.39.47.jpeg" id="2_dsbkn"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://c6nojutq318uu" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182843.png" id="9_pvi33"]
 [ext_resource type="Texture2D" uid="uid://6ke45wua0xh6" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182600.png" id="10_bmf3h"]
 [ext_resource type="Texture2D" uid="uid://cax7nd88rn5au" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 183641.png" id="11_31qhy"]
-[ext_resource type="AudioStream" uid="uid://djygprsm3ecq1" path="res://Sons/SomdoJOgo-.ogg" id="17_pvi33"]
 [ext_resource type="PackedScene" uid="uid://ciyqy4foosh4b" path="res://Scene/Modals/LoreModal.tscn" id="19_f07r3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmf3h"]
@@ -173,11 +172,6 @@ offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.00739, 0.700245)
-
-[node name="MusicaFundo" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(1, 0)
-stream = ExtResource("17_pvi33")
-autoplay = true
 
 [node name="VerLoreButton" type="Button" parent="."]
 layout_mode = 0

@@ -68,18 +68,3 @@ func buy_item(item_id: String) -> bool:
 			add_salary(bonus)
 		return true
 	return false
-
-# ---------------- Formatação ----------------
-func format_money(value: int) -> String:
-	if value >= 1_000_000:
-		var result = value / 1_000_000.0
-		var s = str(round(result * 10) / 10.0)
-		s = s.rstrip("0").rstrip(".")
-		return s + "kk"
-	elif value >= 1_000:
-		var result = value / 1_000.0
-		var s = str(round(result * 10) / 10.0)
-		s = s.rstrip("0").rstrip(".")
-		return s + "k"
-	else:
-		return str(value)

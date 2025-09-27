@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dh2ok0l0ttuxf"
-path="res://.godot/imported/Golden GleamSomdaLore.wav-bb492e3fadcd93e8c4a620c83a542049.sample"
+path="res://.godot/imported/funky_theme.ogg-e3dcd4c35904d2d9d4f56dee6c576462.sample"
 
 [deps]
 
-source_file="res://Sons/Golden GleamSomdaLore.wav"
-dest_files=["res://.godot/imported/Golden GleamSomdaLore.wav-bb492e3fadcd93e8c4a620c83a542049.sample"]
+source_file="res://Assets/Music/funky_theme.ogg"
+dest_files=["res://.godot/imported/funky_theme.ogg-e3dcd4c35904d2d9d4f56dee6c576462.sample"]
 
 [params]
 

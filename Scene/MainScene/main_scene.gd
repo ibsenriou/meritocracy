@@ -26,8 +26,14 @@ var LoreModalScene = preload("res://Scene/Modals/LoreModal.tscn")
 @onready var tela_ativa: Control = $TelaAtiva
 var tela_atual: Node = null
 
+const Utils = preload("res://Scene/Scripts/Utils.gd") ## Utils script importado pois não é um autoload
+# Autoload são classes usando o padrão Singleton, são classes que instanciam um único objeto imediatamente quando importada
+# Como o utils usará apenas métodos estáticos para organização do código, você nao precisar instanciar uma classe utils()
+# apenas chamar Utils.format_money e não preciasa usar var utils = new Utils() e entao utils.format_money().
 
 func _ready():
+
+	MusicManager.play_music("gameplay")
 	_iniciar_jogo()
 
 
@@ -114,10 +120,10 @@ func _calcular_avanco_de_periodo(get_lucros_e_prejuizos: Callable) -> void:
 # --- HUD ---
 func _atualizar_cabecalho_de_status():
 	mes_ano_label.text = "Tempo Atual: " + str(Global.time)
-	conta_corrente_label.text = "R$ " + Global.format_money(int(Global.money))
+	conta_corrente_label.text = "R$ " + Utils.format_money(int(Global.money))
 
 func _on_money_changed(new_value):
-	conta_corrente_label.text = "R$ " + Global.format_money(int(new_value))
+	conta_corrente_label.text = "R$ " + Utils.format_money(int(new_value))
 
 func _on_period_advanced(_new_value):
 	_atualizar_cabecalho_de_status()
@@ -139,7 +145,6 @@ func _iniciar_jogo() -> void:
 
 	_atualizar_cabecalho_de_status()
 
-	_atualizar_cabecalho_de_status()
 
 # --- LUCROS/PREJUÍZOS ---
 func _calcular_ganhos_e_prejuizos() -> int:
