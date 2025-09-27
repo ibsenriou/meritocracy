@@ -21,12 +21,12 @@ var loja_items: Dictionary = {
 }
 
 # ---------------- Tempo ------------------
-func advance_period(lucro: int) -> void:
-	add_money(lucro)
-
-	time += 1
+func advance_period(profit: int) -> void:
+	add_money(profit)
+	time += 1 # Avance time by 1 unit
 
 	emit_signal("period_advanced", time)
+	save_game()  # ← automatically save after every period advance
 
 # ---------------- Dinheiro ----------------
 func can_afford(amount: int) -> bool:
@@ -68,3 +68,52 @@ func buy_item(item_id: String) -> bool:
 			add_salary(bonus)
 		return true
 	return false
+
+
+### Save Game Mechanics
+func save_game(file_path: String = "user://meritocracy-save-state-1.save") -> void:
+	var save_data := {
+		"money": money,
+		"salary": salary,
+		"time": time,
+		"expenses": expenses
+		# add other global states here
+	}
+	
+	print("Game saving at path: ", ProjectSettings.globalize_path("user://"))
+	
+	var file := FileAccess.open(file_path, FileAccess.WRITE)
+	if file:
+		file.store_var(save_data)
+		file.close()
+		print("✅ Game saved to ", file_path)
+	else:
+		push_error("Failed to open save file for writing")
+		
+### Load Game Mechanics
+func load_game(file_path: String = "user://meritocracy-save-state-1.save") -> void:
+	if not FileAccess.file_exists(file_path):
+		print("No save file found at ", file_path)
+		return
+	
+	var file := FileAccess.open(file_path, FileAccess.READ)
+	if file:
+		var save_data = file.get_var()
+		file.close()
+		
+		# restore global variables
+		money = save_data.get("money", 0)
+		salary = save_data.get("salary", 2000)
+		time = save_data.get("time", 1)
+		expenses = save_data.get("expenses", 0)
+		
+		# emit signals so HUD/UI updates
+		emit_signal("money_changed", money)
+		emit_signal("period_advanced", null)
+		
+		print("✅ Game loaded from ", file_path)
+	else:
+		push_error("Failed to open save file for reading")
+
+func _ready():
+	load_game()  # auto-load the last save
