@@ -5,6 +5,8 @@ extends Control
 @onready var mes_ano_label: Label = $TopoHUD/MesAnoLabel
 @onready var botao_loja: TextureButton = $HBoxContainer/BotaoLoja
 
+@onready var footer: FooterHUD = $FooterHud
+
 const Utils = preload("res://Scene/Scripts/Utils.gd") ## Utils script importado pois não é um autoload
 # Autoload são classes usando o padrão Singleton, são classes que instanciam um único objeto imediatamente quando importada
 # Como o utils usará apenas métodos estáticos para organização do código, você nao precisar instanciar uma classe utils()
@@ -13,12 +15,15 @@ const Utils = preload("res://Scene/Scripts/Utils.gd") ## Utils script importado 
 
 func _ready():
 	MusicManager.play_music("store")
-	botao_loja.pressed.connect(_on_botao_loja_pressed)
+	footer.go_to_store.connect(_on_go_to_main)
 	Global.connect("money_changed", Callable(self, "_on_money_changed"))
 	
 	#Atualiza os valores da interface sempre que a loja abrir
 	_atualizar_cabecalho_de_status()
 
+func _on_go_to_main():
+	get_tree().change_scene_to_file("res://Scene/MainScene/main_scene.tscn")
+	
 func _on_botao_loja_pressed():
 		## já está na Loja → volta pra Main
 	get_tree().change_scene_to_file("res://Scene/MainScene/main_scene.tscn")

@@ -137,5 +137,4 @@ text = "BtnTestModal"
 layout_mode = 1
 
 [node name="FooterHud" parent="." instance=ExtResource("8_j1v2h")]
-offset_top = 680.0
-offset_bottom = 680.0
+position = Vector2(-3, 681)

@@ -22,6 +22,9 @@ var LoreModalScene = preload("res://Scene/Modals/LoreModal.tscn")
 @onready var botao_status: TextureButton = $BotoesInferiores/HBoxContainer/BotaoStatus
 @onready var botao_ver_lore: Button = $VerLoreButton
 
+@onready var footer: FooterHUD  = $FooterHud
+
+
 # --- POPUPS / TELAS ---
 @onready var tela_ativa: Control = $TelaAtiva
 var tela_atual: Node = null
@@ -32,6 +35,12 @@ const Utils = preload("res://Scene/Scripts/Utils.gd") ## Utils script importado 
 # apenas chamar Utils.format_money e não preciasa usar var utils = new Utils() e entao utils.format_money().
 
 func _ready():
+	footer.go_to_store.connect(func(): get_tree().change_scene_to_file("res://Scene/LojaScene/loja_scene.tscn"))
+	#footer.open_inventory.connect(_on_botao_inventario_pressed)
+	#footer.open_options.connect(_on_botao_opcoes_pressed)
+	#footer.open_status.connect(_on_botao_status_pressed)
+	#footer.open_d.connect(_on_botao_D_pressed)
+	#footer.open_e.connect(_on_botao_e_pressed)
 
 	MusicManager.play_music("gameplay")
 	_iniciar_jogo()
@@ -131,13 +140,13 @@ func _on_period_advanced(_new_value):
 
 # --- INICIALIZAÇÃO ---
 func _iniciar_jogo() -> void:
-	botao_loja.pressed.connect(_on_botao_loja_pressed)
-	botao_inventario.pressed.connect(_on_botao_inventario_pressed)
+	#botao_loja.pressed.connect(_on_botao_loja_pressed)
+	#botao_inventario.pressed.connect(_on_botao_inventario_pressed)
 	botao_opcoes.pressed.connect(_on_botao_opcoes_pressed)
 	botao_passar_mes.pressed.connect(_on_botao_passar_mes_pressed)
-	botao_status.pressed.connect(_on_botao_status_pressed)
-	botao_d.pressed.connect(_on_botao_D_pressed)
-	botao_e.pressed.connect(_on_botao_e_pressed)
+	#botao_status.pressed.connect(_on_botao_status_pressed)
+	#botao_d.pressed.connect(_on_botao_D_pressed)
+	#botao_e.pressed.connect(_on_botao_e_pressed)
 	botao_ver_lore.pressed.connect(_on_ver_lore_button_pressed)
 	
 	Global.connect("money_changed", Callable(self, "_on_money_changed"))

@@ -1,16 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://8jntgjy8vx5w"]
+[gd_scene load_steps=8 format=3 uid="uid://8jntgjy8vx5w"]
 
 [ext_resource type="Script" uid="uid://dnmeqecuealjj" path="res://Scene/LojaScene/loja_scene.gd" id="1_14md1"]
 [ext_resource type="Texture2D" uid="uid://bumpypmgupmkv" path="res://Assets/ui/IconesMinimalistasTemporarios/WhatsApp Image 2025-09-22 at 09.39.47.jpeg" id="2_cei2v"]
 [ext_resource type="Texture2D" uid="uid://dlv1lh4264f2f" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 183953.png" id="3_pufcs"]
 [ext_resource type="Texture2D" uid="uid://bw1vhxar1rc3j" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 184005.png" id="4_16aka"]
 [ext_resource type="Texture2D" uid="uid://c2d3dk0afevxc" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 184018.png" id="5_fj6gk"]
-[ext_resource type="Texture2D" uid="uid://dw0u0hdsc73je" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 114200.png" id="13_nq1ni"]
-[ext_resource type="Texture2D" uid="uid://bg1csq6emlxru" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 114255.png" id="14_qcmv7"]
-[ext_resource type="Texture2D" uid="uid://cf0r6kmdoim1r" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182526.png" id="15_cei2v"]
-[ext_resource type="Texture2D" uid="uid://dulqq4skcdxyr" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182544.png" id="16_k3q8n"]
-[ext_resource type="Texture2D" uid="uid://c6nojutq318uu" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182843.png" id="17_yl2hm"]
-[ext_resource type="Texture2D" uid="uid://6ke45wua0xh6" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182600.png" id="18_yvuse"]
+[ext_resource type="PackedScene" uid="uid://cajkim51p54be" path="res://Scene/Common/FooterHUD.tscn" id="7_i0ptg"]
 [ext_resource type="Texture2D" uid="uid://dgesgasmv6cmv" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 184149.png" id="21_k3q8n"]
 
 [node name="LojaScene" type="Control"]
@@ -319,47 +314,6 @@ layout_mode = 2
 layout_mode = 0
 text = "Descrição do Item 10"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-show_behind_parent = true
-layout_mode = 0
-offset_left = 3.0
-offset_top = 594.0
-offset_right = 343.0
-offset_bottom = 694.0
-scale = Vector2(1.57368, 0.909948)
-mouse_filter = 0
-theme_override_constants/separation = 13
-
-[node name="BotaoLoja" type="TextureButton" parent="HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("13_nq1ni")
-texture_pressed = ExtResource("14_qcmv7")
-stretch_mode = 0
-
-[node name="BotaoInventario" type="TextureButton" parent="HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("15_cei2v")
-texture_pressed = ExtResource("14_qcmv7")
-stretch_mode = 0
-
-[node name="BotaoStatus" type="TextureButton" parent="HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("16_k3q8n")
-texture_pressed = ExtResource("14_qcmv7")
-stretch_mode = 0
-
-[node name="BotaoD" type="TextureButton" parent="HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("17_yl2hm")
-texture_pressed = ExtResource("14_qcmv7")
-stretch_mode = 0
-
-[node name="BotaoE" type="TextureButton" parent="HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("18_yvuse")
-texture_pressed = ExtResource("14_qcmv7")
-stretch_mode = 0
-
 [node name="TopoHUD" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 10
@@ -400,3 +354,7 @@ size_flags_horizontal = 8
 texture_normal = ExtResource("21_k3q8n")
 texture_pressed = ExtResource("21_k3q8n")
 stretch_mode = 0
+
+[node name="FooterHud" parent="." instance=ExtResource("7_i0ptg")]
+offset_top = 680.0
+offset_bottom = 680.0
