@@ -1,6 +1,5 @@
 extends Node
 
-
 # --- Sinais ---
 signal money_changed(new_value)
 signal salary_changed(new_value)
@@ -20,13 +19,35 @@ var loja_items: Dictionary = {
 	"curso_avanc":  {"price": 150000,"bonus": 1500}
 }
 
-# ---------------- Tempo ------------------
 func advance_period(profit: int) -> void:
-	add_money(profit)
-	time += 1 # Avance time by 1 unit
+	# --- Debug: BEFORE advancing ---
+	print("==============================")
+	print(">> ADVANCE PERIOD - BEFORE")
+	print("Time:", self.time)
+	print("Money:", self.money)
+	print("Salary:", Global.salary)
+	print("Expenses:", Global.expenses)
+	print("Profit to apply:", profit)
+	print("==============================")
 
+	# --- Advance the period ---
+	print("Avançando para o próximo período")
+	time += 1
+	add_money(profit)
+
+	# --- Debug: AFTER advancing ---
+	print("==============================")
+	print(">> ADVANCE PERIOD - AFTER")
+	print("Time:", self.time)
+	print("Money:", self.money)
+	print("Salary:", Global.salary)
+	print("Expenses:", Global.expenses)
+	print("==============================")
+
+	# --- Emit signal and save ---
 	emit_signal("period_advanced", time)
-	save_game()  # ← automatically save after every period advance
+	save_game()  # Automatically save after every period advance
+
 
 # ---------------- Dinheiro ----------------
 func can_afford(amount: int) -> bool:

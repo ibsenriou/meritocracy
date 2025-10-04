@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cajkim51p54be"]
 
 [ext_resource type="Texture2D" uid="uid://dw0u0hdsc73je" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 114200.png" id="1_1q8mu"]
-[ext_resource type="Script" uid="uid://bhjegbpcyph4m" path="res://Scene/Common/FooterHUD.gd" id="1_fduon"]
+[ext_resource type="Script" uid="uid://bhjegbpcyph4m" path="res://Scene/Common/Footer/FooterHUD.gd" id="1_fduon"]
 [ext_resource type="Texture2D" uid="uid://bg1csq6emlxru" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 114255.png" id="2_fduon"]
 [ext_resource type="Texture2D" uid="uid://cf0r6kmdoim1r" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182526.png" id="3_xiws6"]
 [ext_resource type="Texture2D" uid="uid://dulqq4skcdxyr" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 182544.png" id="4_unkn5"]
@@ -15,6 +15,7 @@ script = ExtResource("1_fduon")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 show_behind_parent = true
+layout_mode = 0
 offset_left = 3.0
 offset_top = -76.0
 offset_right = 343.0

@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dnmeqecuealjj" path="res://Scene/LojaScene/loja_scene.gd" id="1_14md1"]
 [ext_resource type="Texture2D" uid="uid://bumpypmgupmkv" path="res://Assets/ui/IconesMinimalistasTemporarios/WhatsApp Image 2025-09-22 at 09.39.47.jpeg" id="2_cei2v"]
+[ext_resource type="PackedScene" uid="uid://dovplcekomf4p" path="res://Scene/Common/Header/HeaderHUD.tscn" id="2_i0ptg"]
 [ext_resource type="Texture2D" uid="uid://dlv1lh4264f2f" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 183953.png" id="3_pufcs"]
 [ext_resource type="Texture2D" uid="uid://bw1vhxar1rc3j" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 184005.png" id="4_16aka"]
 [ext_resource type="Texture2D" uid="uid://c2d3dk0afevxc" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 184018.png" id="5_fj6gk"]
-[ext_resource type="PackedScene" uid="uid://cajkim51p54be" path="res://Scene/Common/FooterHUD.tscn" id="7_i0ptg"]
-[ext_resource type="Texture2D" uid="uid://dgesgasmv6cmv" path="res://Assets/ui/IconesMinimalistasTemporarios/Captura de tela 2025-09-26 184149.png" id="21_k3q8n"]
+[ext_resource type="PackedScene" uid="uid://cajkim51p54be" path="res://Scene/Common/Footer/FooterHUD.tscn" id="7_i0ptg"]
 
 [node name="LojaScene" type="Control"]
 layout_mode = 3
@@ -16,6 +16,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_14md1")
+
+[node name="HeaderHud" parent="." instance=ExtResource("2_i0ptg")]
 
 [node name="BackGround" type="TextureRect" parent="."]
 show_behind_parent = true
@@ -44,9 +46,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
-offset_top = 91.0
+offset_top = 109.0
 offset_right = 90.0
-offset_bottom = 91.0
+offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.856686, 0.735589)
@@ -76,8 +78,7 @@ layout_mode = 2
 [node name="LabelDescricao1" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/ItemCursoBasico/PanelDescricao1"]
 layout_mode = 0
 offset_right = 400.0
-offset_bottom = 23.0
-scale = Vector2(1.00249, 1.003)
+offset_bottom = 78.0
 theme_override_font_sizes/font_size = 17
 text = "Título: Curso básico 
 Descrição: Aumenta o salário base em $50 permanentemente."
@@ -313,47 +314,6 @@ layout_mode = 2
 [node name="LabelDescricao10" type="Label" parent="CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/Item10/PanelDescricao10"]
 layout_mode = 0
 text = "Descrição do Item 10"
-
-[node name="TopoHUD" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_right = 9.0
-offset_bottom = 92.0
-grow_horizontal = 2
-scale = Vector2(0.98227, 0.993433)
-
-[node name="MesAnoLabel" type="Label" parent="TopoHUD"]
-layout_mode = 2
-offset_left = 13.2346
-offset_top = 21.1388
-offset_right = 101.235
-offset_bottom = 44.1388
-scale = Vector2(1.44898, 1.78571)
-text = "Jan/Ano 01 "
-
-[node name="ContaCorrenteLabel" type="Label" parent="TopoHUD"]
-layout_mode = 2
-offset_left = 330.866
-offset_top = 25.1653
-offset_right = 395.866
-offset_bottom = 48.1653
-scale = Vector2(1.51852, 1.5)
-size_flags_horizontal = 4
-text = "R$ 00,00"
-
-[node name="BotaoOpcoes" type="TextureButton" parent="TopoHUD"]
-modulate = Color(0.54099, 0.54099, 0.54099, 1)
-use_parent_material = true
-layout_mode = 2
-offset_left = 442.852
-offset_top = -1.00661
-offset_right = 542.852
-offset_bottom = 98.9934
-size_flags_horizontal = 8
-texture_normal = ExtResource("21_k3q8n")
-texture_pressed = ExtResource("21_k3q8n")
-stretch_mode = 0
 
 [node name="FooterHud" parent="." instance=ExtResource("7_i0ptg")]
 offset_top = 680.0

@@ -1,10 +1,8 @@
 extends Control
 
 @onready var botao_comprar_valor: Button = $CanvasLayer/ScrollContainer/MarginContainer/VBoxContainer/ItemCursoBasico/BotaoComprarValor
-@onready var conta_corrente_label: Label = $TopoHUD/ContaCorrenteLabel
-@onready var mes_ano_label: Label = $TopoHUD/MesAnoLabel
-@onready var botao_loja: TextureButton = $HBoxContainer/BotaoLoja
 
+@onready var header: HeaderHUD = $HeaderHud
 @onready var footer: FooterHUD = $FooterHud
 
 const Utils = preload("res://Scene/Scripts/Utils.gd") ## Utils script importado pois não é um autoload
@@ -15,36 +13,26 @@ const Utils = preload("res://Scene/Scripts/Utils.gd") ## Utils script importado 
 
 func _ready():
 	MusicManager.play_music("store")
+	
+	# Initial HUD update
+	header.update_status(Global.time, Global.money)
+	
+	# Footer signals
 	footer.go_to_store.connect(_on_go_to_main)
 	Global.connect("money_changed", Callable(self, "_on_money_changed"))
 	
-	#Atualiza os valores da interface sempre que a loja abrir
-	_atualizar_cabecalho_de_status()
+	# Connect buy button
+	botao_comprar_valor.pressed.connect(_on_botao_comprar_valor_pressed)
+
 
 func _on_go_to_main():
 	get_tree().change_scene_to_file("res://Scene/MainScene/main_scene.tscn")
-	
-func _on_botao_loja_pressed():
-		## já está na Loja → volta pra Main
-	get_tree().change_scene_to_file("res://Scene/MainScene/main_scene.tscn")
-	
 
 func _on_money_changed(new_value):
-	conta_corrente_label.text = "R$ " + Utils.format_money(int(new_value))
+	header.update_status(Global.time, new_value)
 	
-func _atualizar_cabecalho_de_status():
-	mes_ano_label.text = "Tempo Atual: " + str(Global.time)
-	conta_corrente_label.text = "R$ " + Utils.format_money(int(Global.money))
-
-	
-	# Atualiza o texto do botão com o preço real vindo do Global
-	var preco = Global.get_price("curso_basico")
-	botao_comprar_valor.text = "R$ " + str(preco)
-
-	# Conecta a ação de compra
-	botao_comprar_valor.pressed.connect(_on_botao_comprar_valor_pressed)
-
 func _on_botao_comprar_valor_pressed():
+	print("Pressed Buy Button")
 	var item_id = "curso_basico"
 	if Global.buy_item(item_id):
 		print("✅ Compra bem-sucedida! Dinheiro: ", Global.money, " & Salário: ", Global.salary)
