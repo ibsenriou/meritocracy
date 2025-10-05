@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjk2p4mg1xect"]
+
+[ext_resource type="PackedScene" uid="uid://cnm1vai107vb0" path="res://Scene/ExpensesScene/ExpensesPanel.tscn" id="1_6rms4"]
+[ext_resource type="Script" uid="uid://qqlsyiwnbynj" path="res://Scene/ExpensesScene/ExpensesScene.gd" id="1_cl1hb"]
+[ext_resource type="Script" uid="uid://d30bncln4tcrs" path="res://Scene/Common/Header/HeaderHUD.gd" id="1_muwp0"]
+[ext_resource type="PackedScene" uid="uid://cajkim51p54be" path="res://Scene/Common/Footer/FooterHUD.tscn" id="2_cl1hb"]
+[ext_resource type="PackedScene" uid="uid://dovplcekomf4p" path="res://Scene/Common/Header/HeaderHUD.tscn" id="4_083gs"]
+
+[node name="ExpensesScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cl1hb")
+
+[node name="HeaderHud" parent="." instance=ExtResource("4_083gs")]
+
+[node name="ExpensesPanel" parent="." instance=ExtResource("1_6rms4")]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 542.0
+offset_bottom = 681.0
+script = ExtResource("1_muwp0")
+
+[node name="FooterHud" parent="." instance=ExtResource("2_cl1hb")]
+offset_left = 3.0
+offset_top = 681.0
+offset_right = 3.0
+offset_bottom = 681.0

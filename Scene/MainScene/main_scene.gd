@@ -18,17 +18,23 @@ func _ready():
 	# Avançar período e atualizar HUD
 	advance_period_button.pressed.connect(_on_advance_period_button_pressed)
 	
-	# Footer botoes on Click connect
-	footer.go_to_store.connect(func(): get_tree().change_scene_to_file(
-		"res://Scene/LojaScene/loja_scene.tscn"
-	))
-
+		# Connect to expenses changes
+	Global.connect("expenses_changed", Callable(self, "_on_expenses_changed"))
+	
 	MusicManager.play_music("gameplay")
+	
+# NEW: Update display when expenses change
+func _on_expenses_changed(_new_value):
+	_update_display()
 
+# NEW: Helper to update all UI elements
+func _update_display():
+	header.update_status(Global.time, Global.money)
+	# You could add expense display in header/footer if desired
 
 # --- MECÂNICA DE TEMPO ---
 func _on_advance_period_button_pressed() -> void:
-	var profit_or_loss = _calculate_profit_or_loss()
+	var profit_or_loss = calculate_profit_or_loss()
 	_advance_period(profit_or_loss)
 	header.update_status(Global.time, Global.money) # keep header in sync
 
@@ -41,8 +47,10 @@ func _advance_period(profit_or_loss: int) -> void:
 
 
 # --- PROFITS / LOSSES ---
-func _calculate_profit_or_loss() -> int:
+func calculate_profit_or_loss() -> int:
 	"""
 	Compute net gain/loss for the current period.
+	Now uses the dynamic expenses system.
 	"""
-	return Global.salary - Global.expenses
+	var current_expenses = Global.get_expenses()  # CHANGED: use new system
+	return Global.salary - current_expenses

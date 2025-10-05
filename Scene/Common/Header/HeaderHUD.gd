@@ -10,7 +10,7 @@ signal request_advance_period  # HUD asks parent to advance the period
 @onready var account_balance_label: Label = $AccountBalanceLabel
 
 # --- Buttons ---
-@onready var options_button: TextureButton = $OptionsButon
+#@onready var options_button: TextureButton = $OptionsButon
 
 
 # --- Utils ---
@@ -19,7 +19,7 @@ const Utils = preload("res://Scene/Scripts/Utils.gd")
 
 func _ready() -> void:
 	# Connect buttons
-	options_button.pressed.connect(func(): print("Navegando para opções"))
+	#options_button.pressed.connect(func(): print("Navegando para opções"))
 
 	# Connect global signals
 	Global.connect("money_changed", Callable(self, "_on_money_changed"))

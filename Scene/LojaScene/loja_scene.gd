@@ -14,19 +14,10 @@ const Utils = preload("res://Scene/Scripts/Utils.gd") ## Utils script importado 
 func _ready():
 	MusicManager.play_music("store")
 	
-	# Initial HUD update
-	header.update_status(Global.time, Global.money)
-	
-	# Footer signals
-	footer.go_to_store.connect(_on_go_to_main)
 	Global.connect("money_changed", Callable(self, "_on_money_changed"))
 	
 	# Connect buy button
 	botao_comprar_valor.pressed.connect(_on_botao_comprar_valor_pressed)
-
-
-func _on_go_to_main():
-	get_tree().change_scene_to_file("res://Scene/MainScene/main_scene.tscn")
 
 func _on_money_changed(new_value):
 	header.update_status(Global.time, new_value)
